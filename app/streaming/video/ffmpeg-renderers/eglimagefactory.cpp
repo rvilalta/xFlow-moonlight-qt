@@ -254,7 +254,7 @@ ssize_t EglImageFactory::exportVAImages(AVFrame *frame, VADRMPRIMESurfaceDescrip
         // Max 33 attributes (1 key + 1 value for each)
         const int EGL_ATTRIB_COUNT = 33 * 2;
         EGLAttrib attribs[EGL_ATTRIB_COUNT] = {
-            EGL_LINUX_DRM_FOURCC_EXT, (EGLAttrib)layer.drm_format,
+            EGL_LINUX_DRM_FOURCC_EXT, layer.drm_format,
             EGL_WIDTH, i == 0 ? frame->width : frame->width / 2,
             EGL_HEIGHT, i == 0 ? frame->height : frame->height / 2,
             EGL_IMAGE_PRESERVED_KHR, EGL_TRUE,
@@ -443,11 +443,6 @@ bool EglImageFactory::supportsImportingFormat(EGLDisplay dpy, EGLint format)
                      "eglQueryDmaBufFormatsEXT() #1 failed: %d", eglGetError());
         return false;
     }
-    else if (numFormats == 0) {
-        SDL_LogWarn(SDL_LOG_CATEGORY_APPLICATION,
-                    "eglQueryDmaBufFormatsEXT() returned no supported formats!");
-        return false;
-    }
 
     EGLint formats[numFormats];
     if (!m_eglQueryDmaBufFormatsEXT(dpy, numFormats, formats, &numFormats)) {
@@ -483,11 +478,6 @@ bool EglImageFactory::supportsImportingModifier(EGLDisplay dpy, EGLint format, E
     if (!m_eglQueryDmaBufModifiersEXT(dpy, format, 0, nullptr, nullptr, &numModifiers)) {
         SDL_LogError(SDL_LOG_CATEGORY_APPLICATION,
                      "eglQueryDmaBufModifiersEXT() #1 failed: %d", eglGetError());
-        return false;
-    }
-    else if (numModifiers == 0) {
-        SDL_LogWarn(SDL_LOG_CATEGORY_APPLICATION,
-                    "eglQueryDmaBufModifiersEXT() returned no supported modifiers!");
         return false;
     }
 

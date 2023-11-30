@@ -46,31 +46,17 @@ SdlInputHandler::findStateForGamepad(SDL_JoystickID id)
         }
     }
 
-    // We can get a spurious removal event if the device is removed
-    // before or during SDL_GameControllerOpen(). This is fine to ignore.
+    // This should only happen with too many gamepads
+    SDL_assert(SDL_NumJoysticks() > MAX_GAMEPADS);
     return nullptr;
 }
 
 void SdlInputHandler::sendGamepadState(GamepadState* state)
 {
     SDL_assert(m_GamepadMask == 0x1 || m_MultiController);
-
-    // Handle Select+PS as the clickpad button on PS4/5 controllers without a clickpad mapping
-    int buttons = state->buttons;
-    if (state->clickpadButtonEmulationEnabled) {
-        if (state->buttons == (BACK_FLAG | SPECIAL_FLAG)) {
-            buttons = MISC_FLAG;
-            state->emulatedClickpadButtonDown = true;
-        }
-        else if (state->emulatedClickpadButtonDown) {
-            buttons &= ~MISC_FLAG;
-            state->emulatedClickpadButtonDown = false;
-        }
-    }
-
     LiSendMultiControllerEvent(state->index,
                                m_GamepadMask,
-                               buttons,
+                               state->buttons,
                                state->lt,
                                state->rt,
                                state->lsX,
@@ -466,20 +452,6 @@ void SdlInputHandler::handleControllerDeviceEvent(SDL_ControllerDeviceEvent* eve
             return;
         }
 
-        // SDL_CONTROLLERDEVICEADDED can be reported multiple times for the same
-        // gamepad in rare cases, because SDL doesn't fixup the device index in
-        // the SDL_CONTROLLERDEVICEADDED event if an unopened gamepad disappears
-        // before we've processed the add event.
-        for (int i = 0; i < MAX_GAMEPADS; i++) {
-            if (m_GamepadState[i].controller == controller) {
-                SDL_LogWarn(SDL_LOG_CATEGORY_APPLICATION,
-                            "Received duplicate add event for controller index: %d",
-                            event->which);
-                SDL_GameControllerClose(controller);
-                return;
-            }
-        }
-
         // We used to use SDL_GameControllerGetPlayerIndex() here but that
         // can lead to strange issues due to bugs in Windows where an Xbox
         // controller will join as player 2, even though no player 1 controller
@@ -666,14 +638,6 @@ void SdlInputHandler::handleControllerDeviceEvent(SDL_ControllerDeviceEvent* eve
             type = LI_CTYPE_UNKNOWN;
             break;
         }
-
-        // If this is a PlayStation controller that doesn't have a touchpad button mapped,
-        // we'll allow the Select+PS button combo to act as the touchpad.
-        state->clickpadButtonEmulationEnabled =
-#if SDL_VERSION_ATLEAST(2, 0, 14)
-            SDL_GameControllerGetBindForButton(state->controller, SDL_CONTROLLER_BUTTON_TOUCHPAD).bindType == SDL_CONTROLLER_BINDTYPE_NONE &&
-#endif
-            type == LI_CTYPE_PS;
 
         LiSendControllerArrivalEvent(state->index, m_GamepadMask, type, supportedButtonFlags, capabilities);
 #else

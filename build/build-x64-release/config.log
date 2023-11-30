@@ -1,0 +1,15 @@
+executing config test SL
++ cd /d C:\Users\xFlow-Laptop\xFlow-moonlight-qt\build\build-x64-release\config.tests\SL && C:\Qt\5.15.0\msvc2019_64\bin\qmake.exe  -spec C:/Qt/5.15.0/msvc2019_64/mkspecs/win32-msvc "CONFIG -= qt debug_and_release app_bundle lib_bundle" C:/Users/xFlow-Laptop/xFlow-moonlight-qt/config.tests/SL
++ cd /d C:\Users\xFlow-Laptop\xFlow-moonlight-qt\build\build-x64-release\config.tests\SL && set MAKEFLAGS=& nmake
+> Microsoft (R) Program Maintenance Utility Version 14.37.32825.0
+> Copyright (C) Microsoft Corporation.  All rights reserved.
+> 	cl -c -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -O2 -MD -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -EHsc -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -IC:\Users\xFlow-Laptop\xFlow-moonlight-qt\config.tests\SL -I. -IC:\Qt\5.15.0\msvc2019_64\mkspecs\win32-msvc -Fo @C:\Users\XFLOW-~1\AppData\Local\Temp\nmB6F3.tmp
+> main.cpp
+> C:\Users\xFlow-Laptop\xFlow-moonlight-qt\config.tests\SL\main.cpp(1): fatal error C1083: Cannot open include file: 'SLVideo.h': No such file or directory
+> NMAKE : fatal error U1077: 'cl -c -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -O2 -MD -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -EHsc -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -IC:\Users\xFlow-Laptop\xFlow-moonlight-qt\config.tests\SL -I. -IC:\Qt\5.15.0\msvc2019_64\mkspecs\win32-msvc -Fo @C:\Users\XFLOW-~1\AppData\Local\Temp\nmB6F3.tmp' : return code '0x2'
+> Stop.
+test SL FAILED
+executing config test EGL
++ cd /d C:\Users\xFlow-Laptop\xFlow-moonlight-qt\build\build-x64-release\config.tests\EGL && C:\Qt\5.15.0\msvc2019_64\bin\qmake.exe  -spec C:/Qt/5.15.0/msvc2019_64/mkspecs/win32-msvc "CONFIG -= qt debug_and_release app_bundle lib_bundle" C:/Users/xFlow-Laptop/xFlow-moonlight-qt/config.tests/EGL
+> Project ERROR: sdl2 development package not found
+test EGL FAILED

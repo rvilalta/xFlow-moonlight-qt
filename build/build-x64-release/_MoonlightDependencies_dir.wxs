@@ -1,0 +1,1006 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+    <Fragment>
+        <DirectoryRef Id="INSTALLFOLDER">
+            <Component Id="cmp2pQYk2V8gL23_XTZcSZsrIRnnFA" Guid="*">
+                <File Id="fil.moQmbITvRwvJC8l2zCNpwHPMh8" KeyPath="yes" Source="$(DeployDir)\AntiHooking.dll" />
+            </Component>
+            <Component Id="cmpsBk8r6ArkeYZNAMEVtLLzO1Z3Mc" Guid="*">
+                <File Id="filCYUQKR0owfWHF8x1R7dxl9Cd6UQ" KeyPath="yes" Source="$(DeployDir)\avcodec-60.dll" />
+            </Component>
+            <Component Id="cmpbJePZ6KDJE1ubW3qPMNEnIQ2aRM" Guid="*">
+                <File Id="filw.9eQxlefkf526zgdMHTsNW9hLM" KeyPath="yes" Source="$(DeployDir)\avutil-58.dll" />
+            </Component>
+            <Component Id="cmpsdAHJ8Pv.G5fSNeXzjGXN6gUaS8" Guid="*">
+                <File Id="filrPTfKWb74LwKSZkjwBAdd_gFLSo" KeyPath="yes" Source="$(DeployDir)\d3dcompiler_47.dll" />
+            </Component>
+            <Component Id="cmpqa7pandSvMWEdldnSo2zvmeKICs" Guid="*">
+                <File Id="filXkRUvjnQ_pT.x5amG__.N7hKnh8" KeyPath="yes" Source="$(DeployDir)\dav1d.dll" />
+            </Component>
+            <Component Id="cmpo8jRFTB5eYbKcjNC1CcS79xDlPg" Guid="*">
+                <File Id="filacxxG.J4rH1RDJVEBhCbT16u.pw" KeyPath="yes" Source="$(DeployDir)\discord-rpc.dll" />
+            </Component>
+            <Component Id="cmpgsp54rAHSQVjkA5szb8R0QYSWT8" Guid="*">
+                <File Id="film7C3xTZ6Z9bRNjLVoxvSHRW8dI8" KeyPath="yes" Source="$(DeployDir)\gamecontrollerdb.txt" />
+            </Component>
+            <Component Id="cmpSaB5xYEjn_xtp5ygCWP93ogZ_xI" Guid="*">
+                <File Id="filYZyVMz7Gm37BUKApNqpNgFwrtgo" KeyPath="yes" Source="$(DeployDir)\libcrypto-1_1-x64.dll" />
+            </Component>
+            <Component Id="cmp7NojueHq7tpzie6dNS2sB97rjTs" Guid="*">
+                <File Id="fil.6JkTL4Lj8hco8FV21oT_pDesHY" KeyPath="yes" Source="$(DeployDir)\libEGL.dll" />
+            </Component>
+            <Component Id="cmpYYqLGBdLPPx8B03wCC8cs58lmWI" Guid="*">
+                <File Id="filRoku2E7_bK63JyCgZoCtdxsAzBQ" KeyPath="yes" Source="$(DeployDir)\libGLESv2.dll" />
+            </Component>
+            <Component Id="cmpVfZ9M0dfh32LGtrgBTerHIV7pCU" Guid="*">
+                <File Id="filpWOTrv1tFIOpS2YMCYtI8xAh4Ic" KeyPath="yes" Source="$(DeployDir)\libssl-1_1-x64.dll" />
+            </Component>
+            <Component Id="cmpM8W3_FxGcTmvChIZMYrzN2QuQfk" Guid="*">
+                <File Id="filaELb23aSmcB.sARkufeBQgYm1Gc" KeyPath="yes" Source="$(DeployDir)\opus.dll" />
+            </Component>
+            <Component Id="cmpQ5n2GIWa7MIY33qAubYdYQjJDO0" Guid="*">
+                <File Id="fil91xkn33dnt7PyCr_5RX97yVgTAE" KeyPath="yes" Source="$(DeployDir)\qt.conf" />
+            </Component>
+            <Component Id="cmpmvF5GHfAS8CIa2K0fy5Ol05dyBI" Guid="*">
+                <File Id="filpSr7hr2s321_MA7xAcaodn4o7jI" KeyPath="yes" Source="$(DeployDir)\Qt5Core.dll" />
+            </Component>
+            <Component Id="cmp2JvFprrI.nAeXQpx4h6EhgLB7Is" Guid="*">
+                <File Id="fil6rBf3XHp3oOVONjix8.CekofBLA" KeyPath="yes" Source="$(DeployDir)\Qt5Gui.dll" />
+            </Component>
+            <Component Id="cmppOVbFPGHdJWv5S5HFaYiOlPa6dI" Guid="*">
+                <File Id="fil9GWjR_ANwCPq1_wL34mbj3IG2QE" KeyPath="yes" Source="$(DeployDir)\Qt5Network.dll" />
+            </Component>
+            <Component Id="cmpLCc6cVfdK.22Zm8z0d5i3nATdbg" Guid="*">
+                <File Id="filGmnaopm5.5lZx1s8P1.0eEHyS5o" KeyPath="yes" Source="$(DeployDir)\Qt5Qml.dll" />
+            </Component>
+            <Component Id="cmp2GJ3f0.U03TtR2f57rUMKGT7X3o" Guid="*">
+                <File Id="fileacTHWir.QjC2qnYGrEk4I0eMSE" KeyPath="yes" Source="$(DeployDir)\Qt5QmlModels.dll" />
+            </Component>
+            <Component Id="cmpUwzQGZFywnCrwlj5sf.RzENqByA" Guid="*">
+                <File Id="filxprssswYCyoYmyVaXQICp6MVAi0" KeyPath="yes" Source="$(DeployDir)\Qt5QmlWorkerScript.dll" />
+            </Component>
+            <Component Id="cmpN54v.UEVANy8lbZBy6Js7xOewqA" Guid="*">
+                <File Id="filxpmYjwUqr3zeHW9pnbDuknfS1zk" KeyPath="yes" Source="$(DeployDir)\Qt5Quick.dll" />
+            </Component>
+            <Component Id="cmpfr32uYuK1Se5AnEqNaGCiG21Jsw" Guid="*">
+                <File Id="filQDStR_DyxXf58b7JvzLpmQYkJ8Y" KeyPath="yes" Source="$(DeployDir)\Qt5QuickControls2.dll" />
+            </Component>
+            <Component Id="cmpD_3n_oKOzeGAKJoqt7hp9i1FgA0" Guid="*">
+                <File Id="fillKfnA9BB001OedKUafQCzRFYsLs" KeyPath="yes" Source="$(DeployDir)\Qt5QuickTemplates2.dll" />
+            </Component>
+            <Component Id="cmpsQo8xc4a_jufzYNX38ugU1ibjeA" Guid="*">
+                <File Id="fildVKOXTuu39uyUVIrlS4gOFIj5xM" KeyPath="yes" Source="$(DeployDir)\Qt5Svg.dll" />
+            </Component>
+            <Component Id="cmpKtWjmcFxSV1tTwBS8AwgsToM7U4" Guid="*">
+                <File Id="filLQ.ZVVTSkrvN1CpyS3rtFg3n6kY" KeyPath="yes" Source="$(DeployDir)\Qt5Widgets.dll" />
+            </Component>
+            <Component Id="cmpe1IR0GipXuDYob7zE6AJmQKs3ks" Guid="*">
+                <File Id="filsoXnBUpsrfwOjS5In1bfzBKDs8Q" KeyPath="yes" Source="$(DeployDir)\SDL2.dll" />
+            </Component>
+            <Component Id="cmp48Nb7Dw7rm8SaNFJ_J7QvDFgcD0" Guid="*">
+                <File Id="filWeU1Wg5BeDbNvHQA1t0G6fx8jbo" KeyPath="yes" Source="$(DeployDir)\SDL2_ttf.dll" />
+            </Component>
+            <Directory Id="dir7e82adc.egHiJzdRpAbkvmDJw5c" Name="bearer">
+                <Component Id="cmp4yY9REPO8D1egF.V4uQMD6_BuRc" Guid="*">
+                    <File Id="filzowp8EgKRW4nd_nI2w3p0EStVdw" KeyPath="yes" Source="$(DeployDir)\bearer\qgenericbearer.dll" />
+                </Component>
+            </Directory>
+            <Directory Id="dir9o4ZHaDEuPWXFKRWKBwmC.N2MUA" Name="iconengines">
+                <Component Id="cmpA4ztxUchF533PFXmwjdVRbgMU44" Guid="*">
+                    <File Id="filWcU9Z51lgQeF8V2dr0rieRzQm_s" KeyPath="yes" Source="$(DeployDir)\iconengines\qsvgicon.dll" />
+                </Component>
+            </Directory>
+            <Directory Id="dirWZftpQyhndj9mqRn.U8i9Dqp2.Q" Name="imageformats">
+                <Component Id="cmp68IbmiA9H25NNzShh3Ep6uvMCfM" Guid="*">
+                    <File Id="fildbWHBXvoM2o7ncPce8ewvUyc1g4" KeyPath="yes" Source="$(DeployDir)\imageformats\qgif.dll" />
+                </Component>
+                <Component Id="cmp7AE5VozrZCGO9IyVLDZUKUicfdg" Guid="*">
+                    <File Id="filffWCf61SJ9AkW3qHwzVMpYfGLVU" KeyPath="yes" Source="$(DeployDir)\imageformats\qicns.dll" />
+                </Component>
+                <Component Id="cmpbX384aMU9WaYFKYA0ru6OE9O66M" Guid="*">
+                    <File Id="filQs2OFkFCLOxBg8lMMZv5KEKddTY" KeyPath="yes" Source="$(DeployDir)\imageformats\qico.dll" />
+                </Component>
+                <Component Id="cmpK1Oz8dd1qrkRJ3Po3_cLb8QI_hA" Guid="*">
+                    <File Id="filCnypN8MAqjh0notE_jRfFGa5UoI" KeyPath="yes" Source="$(DeployDir)\imageformats\qjpeg.dll" />
+                </Component>
+                <Component Id="cmpXYcpz6LJusJh.TIPAvdjCX1xcCc" Guid="*">
+                    <File Id="filJ5wnAhg5KBWdvrEwj32JUWjyhAI" KeyPath="yes" Source="$(DeployDir)\imageformats\qsvg.dll" />
+                </Component>
+                <Component Id="cmpCVUkL.8hwwlYqqeuicG3u_3ujlM" Guid="*">
+                    <File Id="fil6dP7wEjuQQjJsyzadK9FRdev4Tw" KeyPath="yes" Source="$(DeployDir)\imageformats\qtga.dll" />
+                </Component>
+                <Component Id="cmpFr8jie6WKlG502.J0A99AICGrFQ" Guid="*">
+                    <File Id="filvscbvoPzMj3Ln9pPyn2PX87xcTM" KeyPath="yes" Source="$(DeployDir)\imageformats\qtiff.dll" />
+                </Component>
+                <Component Id="cmpID24MM.cA7OAK0zwHfd_zU4fI.E" Guid="*">
+                    <File Id="filb4mX_hZcMCAlX9tBa0KHcE5ieZU" KeyPath="yes" Source="$(DeployDir)\imageformats\qwbmp.dll" />
+                </Component>
+                <Component Id="cmpvQA50Ehy1j9leebRa7YYcQDsLHA" Guid="*">
+                    <File Id="filz2ADzzRZaAauN64y7jADBtD.AdE" KeyPath="yes" Source="$(DeployDir)\imageformats\qwebp.dll" />
+                </Component>
+            </Directory>
+            <Directory Id="dirqC5oN5I3i9axI6xHkcVRQ54WJ.w" Name="platforms">
+                <Component Id="cmpMZnOHO9rUxGVW63l3SAH48SbTLs" Guid="*">
+                    <File Id="filTMmYVl6I1AkY6l9ixvJCVkl6pC8" KeyPath="yes" Source="$(DeployDir)\platforms\qwindows.dll" />
+                </Component>
+            </Directory>
+            <Directory Id="dirqXofjuE7r8Pqo8EPTNDF8geVssQ" Name="QtGraphicalEffects">
+                <Component Id="cmpmUuJ_PgvcuCFw4STICyV67.pjEo" Guid="*">
+                    <File Id="filWo1TIjqCmEC3OT4mX4CJV88rK44" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\Blend.qml" />
+                </Component>
+                <Component Id="cmphfKmSveadTrDrIZDV4SR79pNCAI" Guid="*">
+                    <File Id="filYCOrrf9nbvCvW7kdxxtc2W_uv.E" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\BrightnessContrast.qml" />
+                </Component>
+                <Component Id="cmpdDZQKm71OAL7HsQqjAvrNzwoYY4" Guid="*">
+                    <File Id="filc4BDDkawBQjTVLSTeDTEgPbE14w" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\Colorize.qml" />
+                </Component>
+                <Component Id="cmpFLW8RYTbzSWAsOOe8F2FYua52RA" Guid="*">
+                    <File Id="filuDe3t_pJiGyEM5jfDCpAuSCmAsk" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\ColorOverlay.qml" />
+                </Component>
+                <Component Id="cmp8TBYYkpyubm7_.lkKClik6hkr.M" Guid="*">
+                    <File Id="fil9m3IsbZtKQIAXVy8pLP8aEZqAJM" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\ConicalGradient.qml" />
+                </Component>
+                <Component Id="cmpwWeR5un9A3LyB9Qjnv5wApw4wew" Guid="*">
+                    <File Id="filpF3Qi1GLpGjThshXzdoNDI7xjpU" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\Desaturate.qml" />
+                </Component>
+                <Component Id="cmp3VwwdifWHHj24zP2hVrfVHTZX0s" Guid="*">
+                    <File Id="filwtxN5lc7kUiNyGX5LZldqDUBg1g" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\DirectionalBlur.qml" />
+                </Component>
+                <Component Id="cmpzgIYeqbz_bUj6Nmly4mwFkMJDDk" Guid="*">
+                    <File Id="filDLx.kwiadu3QLU8id.fV6Si6H94" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\Displace.qml" />
+                </Component>
+                <Component Id="cmpKw8wVb0.SnTdf7sXbEiHlmYvoG0" Guid="*">
+                    <File Id="filzCFjURe253oTClSkVZdFnofRxKA" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\DropShadow.qml" />
+                </Component>
+                <Component Id="cmppCEgvo_1SATh5r1u4_i2lQvz3uk" Guid="*">
+                    <File Id="filtgYaok2g1Hfh1LjwZGMyU8plZZE" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\FastBlur.qml" />
+                </Component>
+                <Component Id="cmp9bhbXbPkcZSAi12OlUxSXkm_TVw" Guid="*">
+                    <File Id="filhmeXP_7ebE3iKAb68rRTqLRvNsw" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\GammaAdjust.qml" />
+                </Component>
+                <Component Id="cmpMXoShCfi8cMmul6.uTVgl_BAMx4" Guid="*">
+                    <File Id="filYE0FIIzI.HH3Oanv.zheihL8J9g" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\GaussianBlur.qml" />
+                </Component>
+                <Component Id="cmpfe2evDrVeKtX5_bco_Bokz7V1cY" Guid="*">
+                    <File Id="filqNZ_GP9kEhvjejy2LYxemfNDGOU" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\Glow.qml" />
+                </Component>
+                <Component Id="cmpy_9e0b4gSgvh.mAYU.5U6e7ZcqE" Guid="*">
+                    <File Id="filb862qUlOpngfFJp86.fN8TaDryk" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\HueSaturation.qml" />
+                </Component>
+                <Component Id="cmp8kJcakw3mCuhbb4drmnlXFR6ZYs" Guid="*">
+                    <File Id="fil483PBMzPbyJNW5ak192D4Xj5f88" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\InnerShadow.qml" />
+                </Component>
+                <Component Id="cmp1CAw0o.AK56UzgkAFY8LBOmpbhM" Guid="*">
+                    <File Id="filzsU2BrCOiUXjXKGs9UBKvjo0x4Y" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\LevelAdjust.qml" />
+                </Component>
+                <Component Id="cmp99GnZjw5dcDMi9SH8zHKFosn47A" Guid="*">
+                    <File Id="filaV53ATP_7EbSJunAd7yJz9wOogk" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\LinearGradient.qml" />
+                </Component>
+                <Component Id="cmpAfm4IQexJAeCoup9bxMBKrm41o4" Guid="*">
+                    <File Id="filDygbbXz5.WG20qovNfp9pS6u8Do" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\MaskedBlur.qml" />
+                </Component>
+                <Component Id="cmpqBCPJn0ySfkszDzYkW3P0B6NgkU" Guid="*">
+                    <File Id="filP.W4ZJmK_M5EqWWqoEbrYABovKM" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\OpacityMask.qml" />
+                </Component>
+                <Component Id="cmp_LixkoJhBZXx5pjXjv.m8eUHn2U" Guid="*">
+                    <File Id="fil3MPTY_EvRR5l6Q77l5a8E6S5k08" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\plugins.qmltypes" />
+                </Component>
+                <Component Id="cmp_hAe6kDpc2s_hwkTGI2K.gMkb_s" Guid="*">
+                    <File Id="filatGgNsShKoEg1JBecBPz4lO4.A4" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\qmldir" />
+                </Component>
+                <Component Id="cmp2w3wIu6kPWR_KRqr_Lzi5P4nCdQ" Guid="*">
+                    <File Id="filMAHQz4kjVMJDbBeJvm.ypdBTBVI" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\qtgraphicaleffectsplugin.dll" />
+                </Component>
+                <Component Id="cmpwztjJyVqzH2btzwKFogiNza.Hoo" Guid="*">
+                    <File Id="filEMdYxILznzSfqsTqCTVASpWxQO0" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\RadialBlur.qml" />
+                </Component>
+                <Component Id="cmpdAGy5Kssc11pG2LwmfldB6r2r1w" Guid="*">
+                    <File Id="filWBbwxFvKaKx10wYnpDeXyZVQ9yY" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\RadialGradient.qml" />
+                </Component>
+                <Component Id="cmpoAQUxmKXGHbcMqlmkeUmr43JE8I" Guid="*">
+                    <File Id="filnwyyBv4BAy3kmCya9fveHylZfrk" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\RectangularGlow.qml" />
+                </Component>
+                <Component Id="cmpuiqhj_v8xX2ATCPMocTmw_YLgMs" Guid="*">
+                    <File Id="fil5LjTKNLHFQGeim8pvLVHWmcGZBA" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\RecursiveBlur.qml" />
+                </Component>
+                <Component Id="cmpwgCyCUWjNimfppYUUd3o4F1DL4I" Guid="*">
+                    <File Id="filpDEY79mtS7oRsPbKozY1EKEjHMo" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\ThresholdMask.qml" />
+                </Component>
+                <Component Id="cmpod8mN7Sgqhm58BytIGDDGb9R4bk" Guid="*">
+                    <File Id="fil.VrrWyymGH6uc6YaYhyJYSvIeRE" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\ZoomBlur.qml" />
+                </Component>
+                <Directory Id="dirBVqG4bcyi2oSC0bzOR7VZOA0GfE" Name="private">
+                    <Component Id="cmpKPZhg7J2VSe8SdlSgx0TAatOoEQ" Guid="*">
+                        <File Id="filkVSvOZD_B7_s4G1ErO7Nw6k_g6Q" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\private\DropShadowBase.qml" />
+                    </Component>
+                    <Component Id="cmpQi5wn90MwkfIDSYm3aZVKlSO2FM" Guid="*">
+                        <File Id="filjdd2vl68GyTwIPBpvJVcFgCvhiE" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\private\DropShadowBase.qmlc" />
+                    </Component>
+                    <Component Id="cmpj7pepJvy5GtyNjuBNXR94tNScX4" Guid="*">
+                        <File Id="filLdKVqCi2cuatjhXxMixxq8ICNZQ" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\private\FastGlow.qml" />
+                    </Component>
+                    <Component Id="cmpWucx84V3PfN1Y_uIL3JDjTR8t5w" Guid="*">
+                        <File Id="fil1xCGJWQSjxz76pRUGvu11Xp4crI" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\private\FastGlow.qmlc" />
+                    </Component>
+                    <Component Id="cmprQxQSxYIhkcj48cEcQFd4AGXxaw" Guid="*">
+                        <File Id="filFMk5B6Awb44tHtaEeWX2nPUhnbg" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\private\FastInnerShadow.qml" />
+                    </Component>
+                    <Component Id="cmpfouLyuBavBdwkgQubPcnSQ8sOxU" Guid="*">
+                        <File Id="filapsJU44NBGknbFUZNu8YcQcyows" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\private\FastInnerShadow.qmlc" />
+                    </Component>
+                    <Component Id="cmpiKzDYZ_2ynZaR4rcjTXJwDNnOi8" Guid="*">
+                        <File Id="fil0DZ11u1T40CU2o3SOX4L3d4n34E" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\private\FastMaskedBlur.qml" />
+                    </Component>
+                    <Component Id="cmpvp5kJncIW8l6iAhvqliaDTzXuCc" Guid="*">
+                        <File Id="filjj9z9QKDR_2HoW.WF4Z8DYMLiiM" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\private\FastMaskedBlur.qmlc" />
+                    </Component>
+                    <Component Id="cmpHPRLxDtdM5W845dVRegf7DXU058" Guid="*">
+                        <File Id="filnAyWMN1RFm_jGRQwy7CKGDhyk_c" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\private\GaussianDirectionalBlur.qml" />
+                    </Component>
+                    <Component Id="cmpSqoHNbMDR_cIoRpBe0_u9lbBTBw" Guid="*">
+                        <File Id="fileGfLQn6zk6aoZnB8FrRImYo06pw" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\private\GaussianDirectionalBlur.qmlc" />
+                    </Component>
+                    <Component Id="cmpbzbpnPwvW7JZ4SkXKAcu4_BYqYs" Guid="*">
+                        <File Id="filNDBK6GyWPkl5Of8xhUXIg4EUZnU" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\private\GaussianGlow.qml" />
+                    </Component>
+                    <Component Id="cmp0SM4wWSHrHfulD4kFaayK0RAaLk" Guid="*">
+                        <File Id="filGBuGBVtbAA_o_rpgYNX4JNKTb9M" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\private\GaussianGlow.qmlc" />
+                    </Component>
+                    <Component Id="cmpyBNHGYpe.fXrMbQpbiRRWcyKniw" Guid="*">
+                        <File Id="fil2FdI38ajLgGNyckcVbCXy.M.Psc" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\private\GaussianInnerShadow.qml" />
+                    </Component>
+                    <Component Id="cmpjeX0EIT3elDMyMoc0XHg7hUZfSE" Guid="*">
+                        <File Id="filpxTW1rbM_yeBJYaMBlPHXS9zi7w" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\private\GaussianInnerShadow.qmlc" />
+                    </Component>
+                    <Component Id="cmp1u9boi7_eeIFeNaqFi1McH181oA" Guid="*">
+                        <File Id="filsryAfXIwiKYpPnJzJAay2f7Wgvc" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\private\GaussianMaskedBlur.qml" />
+                    </Component>
+                    <Component Id="cmpdFITUqkY4DwfuqOqF6OAXMblBh8" Guid="*">
+                        <File Id="filYbXrABqyZyblaQgRlYBfLaxcJk0" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\private\GaussianMaskedBlur.qmlc" />
+                    </Component>
+                    <Component Id="cmpEIoA4HsB_yAvlwpOmaXnH8aWb1g" Guid="*">
+                        <File Id="filWvcCZ6rEcPHh2C50hp5o4h5XvBM" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\private\qmldir" />
+                    </Component>
+                    <Component Id="cmpqu6fMLsLAcEbNET7OGrsJ7ApDnE" Guid="*">
+                        <File Id="fil7fOvksvNLeSmSjK52AXLz5zA04g" KeyPath="yes" Source="$(DeployDir)\QtGraphicalEffects\private\qtgraphicaleffectsprivate.dll" />
+                    </Component>
+                </Directory>
+            </Directory>
+            <Directory Id="dirSdV1fbsGHQAOoe4jptjsa3Si5Ao" Name="QtQuick">
+                <Directory Id="dirscvPZqYrrillUDoBAT1oUYeOiyc" Name="Controls.2">
+                    <Component Id="cmp4s3JQid8.UtMniGAShq0yQ6PlQ0" Guid="*">
+                        <File Id="filQFOQLNeE5ccmwG6tsNnpe6WVoxQ" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\AbstractButton.qml" />
+                    </Component>
+                    <Component Id="cmpQrt2fTuFVEjzT.PSCcITRd1WrVk" Guid="*">
+                        <File Id="filru3RYR5wHBpx.CHhQVbPhBWoJhU" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Action.qml" />
+                    </Component>
+                    <Component Id="cmpMHbx9a7cEhTGuBQTjmuLgXjQdgw" Guid="*">
+                        <File Id="filIDOpLsMaZcajmRMFPdv2rjmK.wY" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\ActionGroup.qml" />
+                    </Component>
+                    <Component Id="cmp__xYgvDAnrpZqpmXfGsGgVUuHLU" Guid="*">
+                        <File Id="filp_4aAoXT4twwbQpg4uJ7Ir4xOr4" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\ApplicationWindow.qml" />
+                    </Component>
+                    <Component Id="cmpZo2xF5aqY8xWLMqL.dD2LhM6Ui4" Guid="*">
+                        <File Id="filRo1xm0s7gUc_KLbx010WpRHE1FU" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\BusyIndicator.qml" />
+                    </Component>
+                    <Component Id="cmp_gUJsGeCDvmKk6ILkfYRiR4j2Pk" Guid="*">
+                        <File Id="filevv5fOq0ApGMvkma0HrBXABjvu8" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Button.qml" />
+                    </Component>
+                    <Component Id="cmpZpe6i9FjAht8Folng9ZZyLwn_lA" Guid="*">
+                        <File Id="filJ9pABai_zFzxbBoVnnm39G_kg5I" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\ButtonGroup.qml" />
+                    </Component>
+                    <Component Id="cmpoinsdKrBQVfmBmspP0pB8ObDa2M" Guid="*">
+                        <File Id="filizdlwt6vEknqkhPCm5Ay1rk.fxg" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\CheckBox.qml" />
+                    </Component>
+                    <Component Id="cmpPNws1nIxp_6v6KLQzWT5HTgo_xw" Guid="*">
+                        <File Id="fil80uGAwnDR39NB6Kk8CSPPKo2djY" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\CheckDelegate.qml" />
+                    </Component>
+                    <Component Id="cmpOa10mPVAo.i1QcJOGKCVdn.6H.M" Guid="*">
+                        <File Id="fileZwnnTZmTlRzEw4f0pbyxhLzCfE" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\ComboBox.qml" />
+                    </Component>
+                    <Component Id="cmpY9Qw8o3QN43wrKOnXtQm4ZA0NGI" Guid="*">
+                        <File Id="fil7o1Pf7WeatgHHtJmpMBkpXJvWkg" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Container.qml" />
+                    </Component>
+                    <Component Id="cmprtIyJ83Mq5lV_WWMv66Qxsx1M0Y" Guid="*">
+                        <File Id="filJgGvPttNkpldtHONeltIgf.OA9s" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Control.qml" />
+                    </Component>
+                    <Component Id="cmpLQo68k1ad6WtyhQEbfRn8sNWJz8" Guid="*">
+                        <File Id="filnAd90Z.n67X4aTFPgIbJ2GGsrUg" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\DelayButton.qml" />
+                    </Component>
+                    <Component Id="cmpIZsp_Doh_5rCJbUBvGkoU.dNayM" Guid="*">
+                        <File Id="fil.GfZkR27TJvTtPywRrViQGVhvN4" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Dial.qml" />
+                    </Component>
+                    <Component Id="cmpiI_PHcyRuneRD1MwNTiinpzlr7g" Guid="*">
+                        <File Id="fil90b9VqNtcgHnTepW5qQR8EiBF5Y" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Dialog.qml" />
+                    </Component>
+                    <Component Id="cmpIPiwWwteJybrC8gmZqUPN2F382U" Guid="*">
+                        <File Id="filA3vuACZicdRLfGjzZNXQCRTxNsE" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\DialogButtonBox.qml" />
+                    </Component>
+                    <Component Id="cmpqS9xTbDDHRvobaKCdy7Poc6LYhA" Guid="*">
+                        <File Id="file.LDGaz3nQCafPiIrZqJlgnJltI" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Drawer.qml" />
+                    </Component>
+                    <Component Id="cmphaBpiFr5YNnC2pLxIVuVl5oh2PU" Guid="*">
+                        <File Id="filngk_dgmH6L4UI.YFWE.wa6GoaFQ" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Frame.qml" />
+                    </Component>
+                    <Component Id="cmpwQ2iTFCr0O0vzGBgAMcg9xe1ATI" Guid="*">
+                        <File Id="filn42IMXa3pqCOkhL2viEfQbRDaH0" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\GroupBox.qml" />
+                    </Component>
+                    <Component Id="cmpduPU83j3N3wVpe8IkCxEmt0AsIM" Guid="*">
+                        <File Id="filDZ70aBOUo_imD.OS3CYVpNv2ikc" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\HorizontalHeaderView.qml" />
+                    </Component>
+                    <Component Id="cmpgqG8eeQp8I4QGIeSF4h5XTeEaIM" Guid="*">
+                        <File Id="filCq3wXf5kbxwMw3FC4da50H6Bh3o" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\ItemDelegate.qml" />
+                    </Component>
+                    <Component Id="cmp7yJrjH5gxrUyXT8YN9BqyIgsMHw" Guid="*">
+                        <File Id="fil5xeSMzyM2l67XgMEP6hlC8OU0lc" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Label.qml" />
+                    </Component>
+                    <Component Id="cmpIbrjNJ15kXDaANguhXBfIfEolQ4" Guid="*">
+                        <File Id="filu2GSe6op3uUOXfhFalRC.uyp6gc" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Menu.qml" />
+                    </Component>
+                    <Component Id="cmp.v_C.4M9sEkQdoSyUcBNPKyKGB4" Guid="*">
+                        <File Id="filoJpEGv589jVco3pt4yo6x2O7Xtk" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\MenuBar.qml" />
+                    </Component>
+                    <Component Id="cmpOsBmJsKmJ1DySE_wj4BOO4ev7Es" Guid="*">
+                        <File Id="filVmLabHJtKAcqlLpiHfNW0abNdfg" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\MenuBarItem.qml" />
+                    </Component>
+                    <Component Id="cmpnuei2EJX9UWDFuQNE3VBwVxmQDk" Guid="*">
+                        <File Id="filDkyBSFs8jhYmIragp_ZuiP9S5ik" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\MenuItem.qml" />
+                    </Component>
+                    <Component Id="cmpDj6n8W9Ueze6P4b.L7CbPm0A9bE" Guid="*">
+                        <File Id="filRptceNmznSEvj8C5oLUX0EMDMQ8" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\MenuSeparator.qml" />
+                    </Component>
+                    <Component Id="cmpCL12aJSbxf6wo3XWa7vW48pznD8" Guid="*">
+                        <File Id="filTRa2Io3ux1_V8SvAzCad3uCudbc" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Page.qml" />
+                    </Component>
+                    <Component Id="cmpJz6P94x5CZN18v0LdUJrmdpTzfE" Guid="*">
+                        <File Id="filepvG5YU98ME809_38kDAyqju4fA" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\PageIndicator.qml" />
+                    </Component>
+                    <Component Id="cmpr7jCK.gjnlh8M9JEvdtS1gqFIko" Guid="*">
+                        <File Id="fil0pP2wepQoT_OFytzdtqf7X.Eqx8" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Pane.qml" />
+                    </Component>
+                    <Component Id="cmp77Fp1n3kGCfVDyPr5lF_a1auM6c" Guid="*">
+                        <File Id="filDg3Lqe0wTvoNHhu36x85wFehOXQ" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\plugins.qmltypes" />
+                    </Component>
+                    <Component Id="cmp2g8IzhNibaeugE843ei7GW6oaws" Guid="*">
+                        <File Id="filkI.5oJTpSfqNlJWojk2hbSOX81o" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Popup.qml" />
+                    </Component>
+                    <Component Id="cmpPxKI5QydWqYbc.4e5CKbweUEgrE" Guid="*">
+                        <File Id="filL4U.jTdNBpumClGdk3yiyxStb2o" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\ProgressBar.qml" />
+                    </Component>
+                    <Component Id="cmp.cPIE8wNZC6bsmPG.8mq3BzLUqs" Guid="*">
+                        <File Id="filLlpOnz46Kzf_FrtLq7f.2cwk89c" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\qmldir" />
+                    </Component>
+                    <Component Id="cmp5YeD1Oa8PW.EEoV9YSI8oVo0nxE" Guid="*">
+                        <File Id="filqy4vLsGtDPtE3y1eqryj.39QZvA" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\qtquickcontrols2plugin.dll" />
+                    </Component>
+                    <Component Id="cmp3LFrdtiX27x0qAmylaElhvGok9E" Guid="*">
+                        <File Id="fil34sk7W_h1BgosaUE76pyqOo7GcM" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\RadioButton.qml" />
+                    </Component>
+                    <Component Id="cmpZwT8gnzuRVm..CC6255rWT2iydg" Guid="*">
+                        <File Id="filt3xbX9.e5NUAInfTRwpCILS9iA0" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\RadioDelegate.qml" />
+                    </Component>
+                    <Component Id="cmpjFtnZEeinqFdO4dwYZqXHNGcPZY" Guid="*">
+                        <File Id="filcqvmvIsZ5W7UKGFUHsTfbEG5a1s" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\RangeSlider.qml" />
+                    </Component>
+                    <Component Id="cmpqpgPw4mC63p3PAKGqDF_B_ewk.A" Guid="*">
+                        <File Id="fil7GblESp9h4XrwdxaZ1usC4MRTGE" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\RoundButton.qml" />
+                    </Component>
+                    <Component Id="cmpKNhyCN7U3xGMGuxuQBM3n.DKPV0" Guid="*">
+                        <File Id="filhzETfpuMRNczrZkg5Bzm_fhYVd8" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\ScrollBar.qml" />
+                    </Component>
+                    <Component Id="cmp0mtHwgcMe8Mjdu_fnAAb8F3G6EE" Guid="*">
+                        <File Id="fil2cbqj_qeYtZs2WOz20lUjNWhwP8" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\ScrollIndicator.qml" />
+                    </Component>
+                    <Component Id="cmpuqJ71WSvgZTsk9rsFZxDJ7CcZWo" Guid="*">
+                        <File Id="filhEjgz4cAAjrc1rK.XIZ7pJ20TEc" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\ScrollView.qml" />
+                    </Component>
+                    <Component Id="cmpOvbJRouDWzkMlzwWO0Nk9ZZijc4" Guid="*">
+                        <File Id="filMJ.ekjJWapW0FePXNvwpjOX1nkk" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Slider.qml" />
+                    </Component>
+                    <Component Id="cmpDftzqQBQq0uc0GbdVPWNdWnUCBM" Guid="*">
+                        <File Id="filuSML0Hq24o.m72Hc7DNg4PIrP0w" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\SpinBox.qml" />
+                    </Component>
+                    <Component Id="cmpnDdpcS2QkzvmELBVQa3lfISDyCg" Guid="*">
+                        <File Id="filvsrgOMUG.TFHGhuPonYTk4hh7VE" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\SplitView.qml" />
+                    </Component>
+                    <Component Id="cmpMa4E5_QdfF3uVDj6RUwaK774_sE" Guid="*">
+                        <File Id="filFkbATjfmCCjfQnJrsNQair_rODQ" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\StackView.qml" />
+                    </Component>
+                    <Component Id="cmpNs_yXVzoqVx8WH5eZR.Aw66e4L0" Guid="*">
+                        <File Id="filvp1BhBH3ImXcPcfC7VdqYL1dgkk" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\SwipeDelegate.qml" />
+                    </Component>
+                    <Component Id="cmp66VfiJQYybGzHKdVLMlZd5ovS90" Guid="*">
+                        <File Id="filh.h1NCzNndkH9Hir0oHd52BBVTQ" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\SwipeView.qml" />
+                    </Component>
+                    <Component Id="cmpEeEBRor5B31BGkXBEmtQq26G4eA" Guid="*">
+                        <File Id="filaYr1Yhk7b7ek8abRNafb2wHkO30" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Switch.qml" />
+                    </Component>
+                    <Component Id="cmprCeKd9n8Vr.Sqg9tgkh6LTCWOng" Guid="*">
+                        <File Id="fill5MjXsj0op3qR5iJkdgqcTNWRus" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\SwitchDelegate.qml" />
+                    </Component>
+                    <Component Id="cmpB3XlB8yMcau3DV4kVngUa_yz9ag" Guid="*">
+                        <File Id="filyZQb5A7.gBWnDmmtmrd9UnHArs8" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\TabBar.qml" />
+                    </Component>
+                    <Component Id="cmp.985ZD9_ToQeD1mqvquYJlTzFAs" Guid="*">
+                        <File Id="filpEfgdeMRqc1yPRFpAFs1AiaEeJs" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\TabButton.qml" />
+                    </Component>
+                    <Component Id="cmp8jbbnz2DmzOusMBE86JqMMJ.gbw" Guid="*">
+                        <File Id="fily4C6VGiFobKWuH9cSUE14Lml1vo" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\TextArea.qml" />
+                    </Component>
+                    <Component Id="cmp3o9E955oGk6I5ROak9qwm.gNwqQ" Guid="*">
+                        <File Id="filhLylK4oiHsK8SzpTKvOUIX94HQ8" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\TextField.qml" />
+                    </Component>
+                    <Component Id="cmpArGV1DLtZRQEBIjMJ3NJoFSUN6Q" Guid="*">
+                        <File Id="filS_01eICtcb5PI7dGdK_fM_rITCg" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\ToolBar.qml" />
+                    </Component>
+                    <Component Id="cmptJMynv0dTiXg_pXZdLZPHBlanuQ" Guid="*">
+                        <File Id="filrAerSFxau79PD3FCJ0wzFwTaBjI" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\ToolButton.qml" />
+                    </Component>
+                    <Component Id="cmpV0YX4EO7UxvlyZ11vAEqizw0TP8" Guid="*">
+                        <File Id="fil_CoayQkSO9JsHTAx84vePCzf..4" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\ToolSeparator.qml" />
+                    </Component>
+                    <Component Id="cmpnDfBmAScXsWp0Mmo8nfJO2zaIHg" Guid="*">
+                        <File Id="filfO7RLrS2E67F8PVSA3ikpDgo3T8" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\ToolTip.qml" />
+                    </Component>
+                    <Component Id="cmppmfsOo9G8Ae8EOUPS3O8rLVYrY4" Guid="*">
+                        <File Id="filZLEi0Dg_Xp1iD02Kh_dr..vJRjU" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Tumbler.qml" />
+                    </Component>
+                    <Component Id="cmpBCjKEMk.xbL2peYLbQWekPjAPJo" Guid="*">
+                        <File Id="filCrv6LcC9jJrZygLF3A3UZDFIS1g" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\VerticalHeaderView.qml" />
+                    </Component>
+                    <Directory Id="dir70vcnncd8UlCRgqgg_Zfah3l2Mw" Name="Material">
+                        <Component Id="cmpYJA4X4BqfB1G9iUETTyPWdIxM78" Guid="*">
+                            <File Id="filkygPFgNb1slZ_cf1N09S93Ru9N4" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\ApplicationWindow.qml" />
+                        </Component>
+                        <Component Id="cmpTwk4SKwCEzTFz_z1yDi0W0jyMk8" Guid="*">
+                            <File Id="filO87wurExTS21MMqD0JouwHKu8vU" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\BoxShadow.qml" />
+                        </Component>
+                        <Component Id="cmpcqCEY2Jvovl5MWL6vX.BpBCWYrI" Guid="*">
+                            <File Id="filHtKn13nz.IqdZrfiiiYedU7pf7o" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\BusyIndicator.qml" />
+                        </Component>
+                        <Component Id="cmpm2G8BFcMqT_BBVZmx1JClE_Lvgo" Guid="*">
+                            <File Id="filz9FptobBaqrU3q0Lv9KTpE.q87k" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\Button.qml" />
+                        </Component>
+                        <Component Id="cmpwrmzMwrL6tw2PzTu4Dh.XbQL8XM" Guid="*">
+                            <File Id="filF8Ja_9yHJSoqcklXFwPvFJRdlWU" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\CheckBox.qml" />
+                        </Component>
+                        <Component Id="cmpsq9I1d1oe7d4w7SkMHsP65sgD78" Guid="*">
+                            <File Id="filGHzzgDgh7QRw9u5.ZArFp6w2YgA" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\CheckDelegate.qml" />
+                        </Component>
+                        <Component Id="cmp.Pu95oi2qlnrBM.AOFWMLCn.2yY" Guid="*">
+                            <File Id="filFQkltuCNI_nCUiMoiMHrIU7Q6uk" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\CheckIndicator.qml" />
+                        </Component>
+                        <Component Id="cmp0O_IVhoNzz1vx6dU2.1q_ZcPQd8" Guid="*">
+                            <File Id="filAVbuXxC5Blpix5lTj2Xhq5gu58Q" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\ComboBox.qml" />
+                        </Component>
+                        <Component Id="cmpYvWtQKHy4Ec45fuVyQ0WgnjvCvo" Guid="*">
+                            <File Id="filyBuo5arS7rW7jAim_y1gjZKIYZw" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\CursorDelegate.qml" />
+                        </Component>
+                        <Component Id="cmpjr_0v7k6dwiM52j0NU2tCAxCsW8" Guid="*">
+                            <File Id="fil_Krn5l3sQxoSJFsOcfQfjeOPB2c" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\DelayButton.qml" />
+                        </Component>
+                        <Component Id="cmpYH7hTQnRSll3PNeF_uHxQ42Q_9g" Guid="*">
+                            <File Id="fil2acHej.WUWjZUBk1vt.fuiig0Hg" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\Dial.qml" />
+                        </Component>
+                        <Component Id="cmpu3BvI6zrAl7OFfsBq0vuIe.GH_g" Guid="*">
+                            <File Id="filI0ZDhm1iClYkKz5tnbsO7rY20EE" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\Dialog.qml" />
+                        </Component>
+                        <Component Id="cmpUMSwkVwt9eXgsnNpOvq8Ab5drIw" Guid="*">
+                            <File Id="filKVxgAL.9KCFfpAN_PDnStO5sW.A" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\DialogButtonBox.qml" />
+                        </Component>
+                        <Component Id="cmpSMwCzcCdJDNna70fx0eWgZVdHkQ" Guid="*">
+                            <File Id="filA.6zO_e_adYMYCO1YYROaKvSBvs" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\Drawer.qml" />
+                        </Component>
+                        <Component Id="cmpdb0W5z2wfdfJ0iBTJAE0z76Xx.Y" Guid="*">
+                            <File Id="fil_4mTFIxTfTpr7FMhdxeSckY0u9U" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\ElevationEffect.qml" />
+                        </Component>
+                        <Component Id="cmpL2PH5RkcLLtiNkX.PO5fZCpPRX4" Guid="*">
+                            <File Id="filWCufnZz4q6cvDiaDk7g7D_7X8ew" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\Frame.qml" />
+                        </Component>
+                        <Component Id="cmpXnWnFCdHFB9T.z3FS.enGmJl4uQ" Guid="*">
+                            <File Id="filQMps.wDwD8ocZaaxT3QG_yOHt9o" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\GroupBox.qml" />
+                        </Component>
+                        <Component Id="cmpiPUqBYyXvnfLzoW8A.57XHJkPZU" Guid="*">
+                            <File Id="fil7U_418yTZwAq7rdMy9tLhDitDHQ" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\HorizontalHeaderView.qml" />
+                        </Component>
+                        <Component Id="cmpgDxtDeBijrIOJce2DyVx7bJUpO0" Guid="*">
+                            <File Id="filh1wH.D0F2FBJModL4Gl0e_OkJvY" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\ItemDelegate.qml" />
+                        </Component>
+                        <Component Id="cmpd0_nfXBLMMcBdevZQBRKELC82aM" Guid="*">
+                            <File Id="filTEI64Z0Urj8bh1UFfLIaDx52vtE" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\Label.qml" />
+                        </Component>
+                        <Component Id="cmp84lzFDix7HvsOj0ZWBFab3DXdTo" Guid="*">
+                            <File Id="fil4YvE5UOqDaY.i7pVPyfGqPwCIoI" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\Menu.qml" />
+                        </Component>
+                        <Component Id="cmpEYqGR5roCSSBMOaLdvyH23BYOEE" Guid="*">
+                            <File Id="filDbAdIUbRBNM_wb.6afm6cGroQtk" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\MenuBar.qml" />
+                        </Component>
+                        <Component Id="cmpr4RsQwu8RwBMItCQ62Gcs6QsttU" Guid="*">
+                            <File Id="filklABKcTAj6SRVM_fmGQ4W6mi.7I" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\MenuBarItem.qml" />
+                        </Component>
+                        <Component Id="cmp9mPCop60EtdJr.7bWXRvzWUbfoQ" Guid="*">
+                            <File Id="fil4JYawJG..ecBILwqvTgN.YRv0h4" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\MenuItem.qml" />
+                        </Component>
+                        <Component Id="cmpwnlDfEean6jDD6lOaSZaV7elM_w" Guid="*">
+                            <File Id="fil_3mrSPpjQgJeWa8V_jcncizSWzI" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\MenuSeparator.qml" />
+                        </Component>
+                        <Component Id="cmpPBZCVKDon4rcgM6HbAb_gpB6b34" Guid="*">
+                            <File Id="filr5bDk_y5r_.JRN0iN9WmwT3JZ6U" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\Page.qml" />
+                        </Component>
+                        <Component Id="cmpxi7WNKf93Eg6VM20s.arTE.PGZw" Guid="*">
+                            <File Id="fileoSyydt7eeuQIb5UX1XXwTk_2Ts" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\PageIndicator.qml" />
+                        </Component>
+                        <Component Id="cmp17Eon6p_leWB0fnBcB9vLOAXvLA" Guid="*">
+                            <File Id="filIYWlNW_OEAPXSMBnFAfQscBTnIA" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\Pane.qml" />
+                        </Component>
+                        <Component Id="cmpruvor3wpYBm3ODHtbwPXEr3fbtk" Guid="*">
+                            <File Id="filPh1hzmc.rbrXCloPCyY3faHU3MQ" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\plugins.qmltypes" />
+                        </Component>
+                        <Component Id="cmp2d53KuybP5YZ3US3Ofw0di3mnXw" Guid="*">
+                            <File Id="filqnZTSsriXwUkWr5qGPWE4a0DKUM" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\Popup.qml" />
+                        </Component>
+                        <Component Id="cmpDFKIW1YFkOwlf2ULLukjRa7RREw" Guid="*">
+                            <File Id="filoRt6vKKabuhdK1BN3y3L0S23hww" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\ProgressBar.qml" />
+                        </Component>
+                        <Component Id="cmpyTnS3oqpR16UfQ9kfq9_CZmAI4E" Guid="*">
+                            <File Id="filOdwL18sIKtM1eOIeIsCXoY4zdgM" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\qmldir" />
+                        </Component>
+                        <Component Id="cmpPuLKsLMp32KAW2t8890jTI_W_Xw" Guid="*">
+                            <File Id="fil9WGwxEZVMPPBB3K3Yce877F2rfo" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\qtquickcontrols2materialstyleplugin.dll" />
+                        </Component>
+                        <Component Id="cmpYdVdtH0X5tvDMCFJAElpeHmmpbo" Guid="*">
+                            <File Id="filqmRQkIB9kHjOnJkO.03b4arkjGQ" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\RadioButton.qml" />
+                        </Component>
+                        <Component Id="cmpwC2soyJ9XqVdesrh6eyYxh.N7mY" Guid="*">
+                            <File Id="filNtsujllgq1yjAjrsQyezc3eQhKg" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\RadioDelegate.qml" />
+                        </Component>
+                        <Component Id="cmpZGTAH6hz_C7gWJAYKrE7u9bFfK4" Guid="*">
+                            <File Id="filr7zLp8WHTZKDfcK.63Tvu3_o91g" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\RadioIndicator.qml" />
+                        </Component>
+                        <Component Id="cmpXKtYqi_W7igRKhrjeCF0nC4Ya.w" Guid="*">
+                            <File Id="filidMQK2cS_Pg5odOgG.n6mEpCsLM" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\RangeSlider.qml" />
+                        </Component>
+                        <Component Id="cmpuAXJ472LaaUTE1t1wUBcZhNmqFg" Guid="*">
+                            <File Id="fil30tjVRvVmo0Od_GAq.syS9yhanw" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\RectangularGlow.qml" />
+                        </Component>
+                        <Component Id="cmp2nuuNV9TnNjTXAKANNzCze.LKtA" Guid="*">
+                            <File Id="filIt8.NXWjFxfqZEfg6.IU2DHzs1M" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\RoundButton.qml" />
+                        </Component>
+                        <Component Id="cmp7_6UPHiTpQrpCDxnSPVrGkrHKL4" Guid="*">
+                            <File Id="filz6491kgT5LUnbEEXuOIernGkktk" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\ScrollBar.qml" />
+                        </Component>
+                        <Component Id="cmp2sJU5R103TDl9bDZZpBj7Vu2Pyw" Guid="*">
+                            <File Id="filXyxTNvzCiRqVwu9ukYM4f3tzHjE" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\ScrollIndicator.qml" />
+                        </Component>
+                        <Component Id="cmpAd4lSIE5VJhrnyONeSLAJ03Gqnk" Guid="*">
+                            <File Id="fil20X6S6FFk2TaFEyuQb4uU3COvqI" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\Slider.qml" />
+                        </Component>
+                        <Component Id="cmp9YfJu8gZeMJ8WCmDJBHcnSSTs6k" Guid="*">
+                            <File Id="filSMUBGpjBib.WeWv4CzYJG6CbJ4I" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\SliderHandle.qml" />
+                        </Component>
+                        <Component Id="cmpUnccD_BxTTSmmCLEEjbhus2ggDQ" Guid="*">
+                            <File Id="filThqBmpog9HR7.xy3WUNXVvCXFdk" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\SpinBox.qml" />
+                        </Component>
+                        <Component Id="cmp3spCN6JfMyB.mYFIYpb4tsUioNs" Guid="*">
+                            <File Id="filikV2WXQAUFBJY9agtKRD4ZES758" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\SplitView.qml" />
+                        </Component>
+                        <Component Id="cmpLCS.9DAvMJYaq2HLmUEV_r9ZWGg" Guid="*">
+                            <File Id="fil9vY4PBgzPsKUjVvf96k49RoMPxE" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\StackView.qml" />
+                        </Component>
+                        <Component Id="cmpK0chqagajQ18YZuxV5E48BHsW28" Guid="*">
+                            <File Id="filXZ_9OL9yqGX4JOUvGm6W.2CBR_s" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\SwipeDelegate.qml" />
+                        </Component>
+                        <Component Id="cmpW7eLiHmPg4WHg8p1j.pscRo9.0E" Guid="*">
+                            <File Id="filGCfju9XAuw40mivmW854ddOUb4E" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\SwipeView.qml" />
+                        </Component>
+                        <Component Id="cmp0paZRvTOElEeEY5k3tzUnFtOxy4" Guid="*">
+                            <File Id="fil_ZdV1oZbdFGwJJMMmgjk8DX2I3s" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\Switch.qml" />
+                        </Component>
+                        <Component Id="cmpjsJI9sTEJ.TppYxvKTT8mIOJnbY" Guid="*">
+                            <File Id="filzu1IS5n74H16RxHkrP869EbyVkY" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\SwitchDelegate.qml" />
+                        </Component>
+                        <Component Id="cmpJPY96k4hym_0ZJvViZay3GEMzsg" Guid="*">
+                            <File Id="filGVnJVsiAbdaGjR.uiNTRyyIbB0w" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\SwitchIndicator.qml" />
+                        </Component>
+                        <Component Id="cmp9YnEYaWZodTjflZWiS.UWq1fetU" Guid="*">
+                            <File Id="filumv7KHrn8vKuDgebhZxSPRc0CMk" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\TabBar.qml" />
+                        </Component>
+                        <Component Id="cmp.XYn2zc3pvNo8LRiGUmDfeKr4M0" Guid="*">
+                            <File Id="filaqDVpQJIGMUaL0I7ksho0A23yoQ" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\TabButton.qml" />
+                        </Component>
+                        <Component Id="cmpLRWZ04kGMrlMtaSeKvXOsdg6iJc" Guid="*">
+                            <File Id="filsHdpCODsRfNVozFDagWM64o2lWU" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\TextArea.qml" />
+                        </Component>
+                        <Component Id="cmp3Bx2r6tzKy4Okz7nQl6D6Tcj9rA" Guid="*">
+                            <File Id="filS7UweNAzCvkNtSj56vso1wiDtuA" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\TextField.qml" />
+                        </Component>
+                        <Component Id="cmpDIlXGVKaNuuIbfgnt7DmoMCrNME" Guid="*">
+                            <File Id="filJXOWHbgOz1aw1aeqOv02oO0PgLM" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\ToolBar.qml" />
+                        </Component>
+                        <Component Id="cmpp5nN3LTPFU6wh3Er3iioe.eToLU" Guid="*">
+                            <File Id="fil6ICgVJBvk70OU9sun3FdVRmhX8s" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\ToolButton.qml" />
+                        </Component>
+                        <Component Id="cmpYfZ9op8A0Lhg7wNeGN9xRMJ5TuQ" Guid="*">
+                            <File Id="fileOBSvL78UNf6lfizD6RKl7AsBg8" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\ToolSeparator.qml" />
+                        </Component>
+                        <Component Id="cmpzvbhVR6Z_oPzQVyEsj6VynTHicU" Guid="*">
+                            <File Id="filC3PZFQl2Aj0PEOQbGL3hLhYT5Fg" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\ToolTip.qml" />
+                        </Component>
+                        <Component Id="cmp27.tnflvefqiI_b1v7lMAAiYKXQ" Guid="*">
+                            <File Id="fil0Zztz2tGBbOtLzpZ7v6DDL9QLfE" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\Tumbler.qml" />
+                        </Component>
+                        <Component Id="cmpepqSY4m2C7YBrgPfCVOc98pzht0" Guid="*">
+                            <File Id="filKIoS8nESURcwvWtgZrWVA.dlayc" KeyPath="yes" Source="$(DeployDir)\QtQuick\Controls.2\Material\VerticalHeaderView.qml" />
+                        </Component>
+                    </Directory>
+                </Directory>
+                <Directory Id="dirpZueG0SJOIswDRa0aq6RoftdWss" Name="Layouts">
+                    <Component Id="cmppZ7e5bwis_524y2VwdXtAZDf_KM" Guid="*">
+                        <File Id="filxJUyzWbn.eMsZzhYhp02M6LWvTg" KeyPath="yes" Source="$(DeployDir)\QtQuick\Layouts\plugins.qmltypes" />
+                    </Component>
+                    <Component Id="cmpjVE8xIr.O.FPlQ3BrV1xNZMDeKs" Guid="*">
+                        <File Id="fillLCG3fmP4A5fp6f7XV8uRLonf4M" KeyPath="yes" Source="$(DeployDir)\QtQuick\Layouts\qmldir" />
+                    </Component>
+                    <Component Id="cmp7EmB4UxwDr_1CF4QozqhQCHyEug" Guid="*">
+                        <File Id="filjzAT5xRGkQBKk1wYJ9omwv5KHlE" KeyPath="yes" Source="$(DeployDir)\QtQuick\Layouts\qquicklayoutsplugin.dll" />
+                    </Component>
+                </Directory>
+                <Directory Id="dirxgkPM1IG3X0RxXMfGWf6tmTdFVQ" Name="Templates.2">
+                    <Component Id="cmpWuLLo.yDvckJYqm4gjsD8kyvjMI" Guid="*">
+                        <File Id="filqckaYObVI9jVGK_VUEJ80w6U9rk" KeyPath="yes" Source="$(DeployDir)\QtQuick\Templates.2\plugins.qmltypes" />
+                    </Component>
+                    <Component Id="cmpXsAOO.DxTCxwK5Sg9F.nXLw73Is" Guid="*">
+                        <File Id="filv2MZ054i7JMg0XhrtaaLsTaVgSA" KeyPath="yes" Source="$(DeployDir)\QtQuick\Templates.2\qmldir" />
+                    </Component>
+                    <Component Id="cmpPj3bSGHLL9UR.qvSwI3818d52P4" Guid="*">
+                        <File Id="fileOKAf6z8pq7rY8Lv4QmxPThK6EQ" KeyPath="yes" Source="$(DeployDir)\QtQuick\Templates.2\qtquicktemplates2plugin.dll" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir7e2DLO3d.3z0VSxnHzo56YE3Szw" Name="Window.2">
+                    <Component Id="cmpKPMQaSrOJyJXI.MiKozub707kfM" Guid="*">
+                        <File Id="fil_lJuODeUMyua3ayasVHLoOTGWo4" KeyPath="yes" Source="$(DeployDir)\QtQuick\Window.2\plugins.qmltypes" />
+                    </Component>
+                    <Component Id="cmpCRXmGuk09h.ZM.Aq0urb5DtNSsQ" Guid="*">
+                        <File Id="filQfUZa_NOInBW6D8U6.I4j9U2C9c" KeyPath="yes" Source="$(DeployDir)\QtQuick\Window.2\qmldir" />
+                    </Component>
+                    <Component Id="cmpEQ2dPEssAQbdy1sdUAsnKgueLag" Guid="*">
+                        <File Id="filM4c6rV8Ux_geLzI3OqAypGkHlfc" KeyPath="yes" Source="$(DeployDir)\QtQuick\Window.2\windowplugin.dll" />
+                    </Component>
+                </Directory>
+            </Directory>
+            <Directory Id="dir8jK2zMtPHEKdUCBjcSndWOMyioI" Name="QtQuick.2">
+                <Component Id="cmp.MC.2WVlZP9Ai8W5mkKOBNfPPJ4" Guid="*">
+                    <File Id="filuJna1I819dIOcvFjo1BOB_XmoRs" KeyPath="yes" Source="$(DeployDir)\QtQuick.2\plugins.qmltypes" />
+                </Component>
+                <Component Id="cmpXCb1502sZd_6Ssb8jQVYF3t9xxk" Guid="*">
+                    <File Id="fil.oqrqU4jAdYJ.JRehH5MXdg_gR8" KeyPath="yes" Source="$(DeployDir)\QtQuick.2\qmldir" />
+                </Component>
+                <Component Id="cmp1mhylHw9iOGvV6H.ZDzq1oMxk64" Guid="*">
+                    <File Id="filuB4esX4fQkbkvuCbbngMYT.79TI" KeyPath="yes" Source="$(DeployDir)\QtQuick.2\qtquick2plugin.dll" />
+                </Component>
+            </Directory>
+            <Directory Id="dirAEuivjrGDk7J.P_y59OOxM9wmvc" Name="scenegraph">
+                <Component Id="cmpBggQWIIqPI1HceQ7PfSuSfEd8x0" Guid="*">
+                    <File Id="filzp9HCzgZrLoHHN3lkYX081Huar4" KeyPath="yes" Source="$(DeployDir)\scenegraph\qsgd3d12backend.dll" />
+                </Component>
+            </Directory>
+            <Directory Id="dirHmuvnK4NSelzh.xxKtt4b.rIMLc" Name="styles">
+                <Component Id="cmppUDEnG1hTQFkd20JESAHP4jN.z8" Guid="*">
+                    <File Id="filbyLdDopva9QdtDhP9tN1a1F7dk8" KeyPath="yes" Source="$(DeployDir)\styles\qwindowsvistastyle.dll" />
+                </Component>
+            </Directory>
+            <Directory Id="dir1Rf6JnYjXgJTtC.YZRkcX1I61tc" Name="translations">
+                <Component Id="cmpc6QVR6MvhyArAb54eq6E6ibOjNk" Guid="*">
+                    <File Id="fil7y6P_hvC5KulU7y1aveidpJILy8" KeyPath="yes" Source="$(DeployDir)\translations\qt_ar.qm" />
+                </Component>
+                <Component Id="cmpQIJGC7riAYLXva569_R0Gg6PyeU" Guid="*">
+                    <File Id="filB.ItafT_Lqz3aIO_Li9bjE6RoKk" KeyPath="yes" Source="$(DeployDir)\translations\qt_bg.qm" />
+                </Component>
+                <Component Id="cmpMBh2uv9aqTlV_7DorfSi6xNscPU" Guid="*">
+                    <File Id="filmgw2pDwTGTsG.PaT2py5bZCjFIY" KeyPath="yes" Source="$(DeployDir)\translations\qt_ca.qm" />
+                </Component>
+                <Component Id="cmpOzk9Bdrwu0ySrKG28VZrHHhNVkQ" Guid="*">
+                    <File Id="filVV6osww0NAMIh3BMCrszQSFO64U" KeyPath="yes" Source="$(DeployDir)\translations\qt_cs.qm" />
+                </Component>
+                <Component Id="cmp7m2qgH4khaGEwXPo6V__VjZjerk" Guid="*">
+                    <File Id="filmgkG12BoPQNEKbgRoF6jm4vruP0" KeyPath="yes" Source="$(DeployDir)\translations\qt_da.qm" />
+                </Component>
+                <Component Id="cmp2ePGutvT7T_lDOXTcOnjech_.7c" Guid="*">
+                    <File Id="filMz5kcPq8r5JoJnMkhGgbgGYDKNo" KeyPath="yes" Source="$(DeployDir)\translations\qt_de.qm" />
+                </Component>
+                <Component Id="cmpfpfYdKB9gEod6GIoOiy8iSOYKT4" Guid="*">
+                    <File Id="filhutxNFZN0.c0HLyqGkXuvqk.xmE" KeyPath="yes" Source="$(DeployDir)\translations\qt_en.qm" />
+                </Component>
+                <Component Id="cmpxXx.DU4xN1yMckcOYn95i5YJJnw" Guid="*">
+                    <File Id="filcQk0hu.RYKYVa9DsD6zxXE9EPzA" KeyPath="yes" Source="$(DeployDir)\translations\qt_es.qm" />
+                </Component>
+                <Component Id="cmpkkryXk.f3uXS_oZqo8oPRccGgqk" Guid="*">
+                    <File Id="fil2r71_porORh0rL_YMpV9Pf9SnzA" KeyPath="yes" Source="$(DeployDir)\translations\qt_fi.qm" />
+                </Component>
+                <Component Id="cmphz9Vuy8.2zf3cDdxjT4EPgO07xY" Guid="*">
+                    <File Id="fil_11bbX98N23ZSyO7CW0_DbiCKk4" KeyPath="yes" Source="$(DeployDir)\translations\qt_fr.qm" />
+                </Component>
+                <Component Id="cmp_4ZQMJ_fwMJ3qIFHEGwlT1GRGl0" Guid="*">
+                    <File Id="filvB3d2GNpbWA9z8lmXikinMDn26E" KeyPath="yes" Source="$(DeployDir)\translations\qt_gd.qm" />
+                </Component>
+                <Component Id="cmpQHXWegbBstyVK1tztjsaph8qZeU" Guid="*">
+                    <File Id="filQGc3Ay2TBrxKXP5KyDPmiQcaAG8" KeyPath="yes" Source="$(DeployDir)\translations\qt_he.qm" />
+                </Component>
+                <Component Id="cmpMv803IJBDjsqemDPF1Raz33riwY" Guid="*">
+                    <File Id="fil23J8VOwjRUTs7zT5Y2_o3GI.nD0" KeyPath="yes" Source="$(DeployDir)\translations\qt_hu.qm" />
+                </Component>
+                <Component Id="cmpV1qLjew7hJeqwlR_6vBF5Kqy8oE" Guid="*">
+                    <File Id="fili8V2PiVx41z0_a0F7x__5NYzjCo" KeyPath="yes" Source="$(DeployDir)\translations\qt_it.qm" />
+                </Component>
+                <Component Id="cmp3yPpOkzfheuBQsOaRlSKbGquhxc" Guid="*">
+                    <File Id="filuPQ9NnTK7BvSGAEKV7CfNYM4gac" KeyPath="yes" Source="$(DeployDir)\translations\qt_ja.qm" />
+                </Component>
+                <Component Id="cmpdaFEfV2JkZKtooDNQRviwb8iaYo" Guid="*">
+                    <File Id="filWGIEo2QvOIVRDyybo879aJBEXIo" KeyPath="yes" Source="$(DeployDir)\translations\qt_ko.qm" />
+                </Component>
+                <Component Id="cmpXVnXcODt3mkifHlLGRpF3130aUk" Guid="*">
+                    <File Id="fileU2AmWXoVQ9bAJg4DWvMsiktmio" KeyPath="yes" Source="$(DeployDir)\translations\qt_lv.qm" />
+                </Component>
+                <Component Id="cmp6NIAdrxFaCP56RchHAb.UPa.iro" Guid="*">
+                    <File Id="filuKZmIfDckENscgCkkj1JfhETUoY" KeyPath="yes" Source="$(DeployDir)\translations\qt_pl.qm" />
+                </Component>
+                <Component Id="cmpwuyhFwcOWhkLSoR9x29_35DoMYs" Guid="*">
+                    <File Id="filypz.s4CL9Pk4LDFl2YyAa6bax6w" KeyPath="yes" Source="$(DeployDir)\translations\qt_ru.qm" />
+                </Component>
+                <Component Id="cmp.IWLRWUMwJ8otOoV9L2vo3Botp8" Guid="*">
+                    <File Id="filPrDc77LuytPVm1Ftm0NqU3btmyE" KeyPath="yes" Source="$(DeployDir)\translations\qt_sk.qm" />
+                </Component>
+                <Component Id="cmpeQ9j0LU3UL7gpExP6nUIsi_tv_Q" Guid="*">
+                    <File Id="filEFRrI77MTJPU7AIzTNwRFGHohvw" KeyPath="yes" Source="$(DeployDir)\translations\qt_uk.qm" />
+                </Component>
+                <Component Id="cmpyt0xl9iZ3SmI4gY6i5foYx6_Vv0" Guid="*">
+                    <File Id="filrwbrJclmm4IQqigIh8qQnw.NZcA" KeyPath="yes" Source="$(DeployDir)\translations\qt_zh_TW.qm" />
+                </Component>
+            </Directory>
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="MoonlightDependencies">
+            <ComponentRef Id="cmp2pQYk2V8gL23_XTZcSZsrIRnnFA" />
+            <ComponentRef Id="cmpsBk8r6ArkeYZNAMEVtLLzO1Z3Mc" />
+            <ComponentRef Id="cmpbJePZ6KDJE1ubW3qPMNEnIQ2aRM" />
+            <ComponentRef Id="cmpsdAHJ8Pv.G5fSNeXzjGXN6gUaS8" />
+            <ComponentRef Id="cmpqa7pandSvMWEdldnSo2zvmeKICs" />
+            <ComponentRef Id="cmpo8jRFTB5eYbKcjNC1CcS79xDlPg" />
+            <ComponentRef Id="cmpgsp54rAHSQVjkA5szb8R0QYSWT8" />
+            <ComponentRef Id="cmpSaB5xYEjn_xtp5ygCWP93ogZ_xI" />
+            <ComponentRef Id="cmp7NojueHq7tpzie6dNS2sB97rjTs" />
+            <ComponentRef Id="cmpYYqLGBdLPPx8B03wCC8cs58lmWI" />
+            <ComponentRef Id="cmpVfZ9M0dfh32LGtrgBTerHIV7pCU" />
+            <ComponentRef Id="cmpM8W3_FxGcTmvChIZMYrzN2QuQfk" />
+            <ComponentRef Id="cmpQ5n2GIWa7MIY33qAubYdYQjJDO0" />
+            <ComponentRef Id="cmpmvF5GHfAS8CIa2K0fy5Ol05dyBI" />
+            <ComponentRef Id="cmp2JvFprrI.nAeXQpx4h6EhgLB7Is" />
+            <ComponentRef Id="cmppOVbFPGHdJWv5S5HFaYiOlPa6dI" />
+            <ComponentRef Id="cmpLCc6cVfdK.22Zm8z0d5i3nATdbg" />
+            <ComponentRef Id="cmp2GJ3f0.U03TtR2f57rUMKGT7X3o" />
+            <ComponentRef Id="cmpUwzQGZFywnCrwlj5sf.RzENqByA" />
+            <ComponentRef Id="cmpN54v.UEVANy8lbZBy6Js7xOewqA" />
+            <ComponentRef Id="cmpfr32uYuK1Se5AnEqNaGCiG21Jsw" />
+            <ComponentRef Id="cmpD_3n_oKOzeGAKJoqt7hp9i1FgA0" />
+            <ComponentRef Id="cmpsQo8xc4a_jufzYNX38ugU1ibjeA" />
+            <ComponentRef Id="cmpKtWjmcFxSV1tTwBS8AwgsToM7U4" />
+            <ComponentRef Id="cmpe1IR0GipXuDYob7zE6AJmQKs3ks" />
+            <ComponentRef Id="cmp48Nb7Dw7rm8SaNFJ_J7QvDFgcD0" />
+            <ComponentRef Id="cmp4yY9REPO8D1egF.V4uQMD6_BuRc" />
+            <ComponentRef Id="cmpA4ztxUchF533PFXmwjdVRbgMU44" />
+            <ComponentRef Id="cmp68IbmiA9H25NNzShh3Ep6uvMCfM" />
+            <ComponentRef Id="cmp7AE5VozrZCGO9IyVLDZUKUicfdg" />
+            <ComponentRef Id="cmpbX384aMU9WaYFKYA0ru6OE9O66M" />
+            <ComponentRef Id="cmpK1Oz8dd1qrkRJ3Po3_cLb8QI_hA" />
+            <ComponentRef Id="cmpXYcpz6LJusJh.TIPAvdjCX1xcCc" />
+            <ComponentRef Id="cmpCVUkL.8hwwlYqqeuicG3u_3ujlM" />
+            <ComponentRef Id="cmpFr8jie6WKlG502.J0A99AICGrFQ" />
+            <ComponentRef Id="cmpID24MM.cA7OAK0zwHfd_zU4fI.E" />
+            <ComponentRef Id="cmpvQA50Ehy1j9leebRa7YYcQDsLHA" />
+            <ComponentRef Id="cmpMZnOHO9rUxGVW63l3SAH48SbTLs" />
+            <ComponentRef Id="cmpmUuJ_PgvcuCFw4STICyV67.pjEo" />
+            <ComponentRef Id="cmphfKmSveadTrDrIZDV4SR79pNCAI" />
+            <ComponentRef Id="cmpdDZQKm71OAL7HsQqjAvrNzwoYY4" />
+            <ComponentRef Id="cmpFLW8RYTbzSWAsOOe8F2FYua52RA" />
+            <ComponentRef Id="cmp8TBYYkpyubm7_.lkKClik6hkr.M" />
+            <ComponentRef Id="cmpwWeR5un9A3LyB9Qjnv5wApw4wew" />
+            <ComponentRef Id="cmp3VwwdifWHHj24zP2hVrfVHTZX0s" />
+            <ComponentRef Id="cmpzgIYeqbz_bUj6Nmly4mwFkMJDDk" />
+            <ComponentRef Id="cmpKw8wVb0.SnTdf7sXbEiHlmYvoG0" />
+            <ComponentRef Id="cmppCEgvo_1SATh5r1u4_i2lQvz3uk" />
+            <ComponentRef Id="cmp9bhbXbPkcZSAi12OlUxSXkm_TVw" />
+            <ComponentRef Id="cmpMXoShCfi8cMmul6.uTVgl_BAMx4" />
+            <ComponentRef Id="cmpfe2evDrVeKtX5_bco_Bokz7V1cY" />
+            <ComponentRef Id="cmpy_9e0b4gSgvh.mAYU.5U6e7ZcqE" />
+            <ComponentRef Id="cmp8kJcakw3mCuhbb4drmnlXFR6ZYs" />
+            <ComponentRef Id="cmp1CAw0o.AK56UzgkAFY8LBOmpbhM" />
+            <ComponentRef Id="cmp99GnZjw5dcDMi9SH8zHKFosn47A" />
+            <ComponentRef Id="cmpAfm4IQexJAeCoup9bxMBKrm41o4" />
+            <ComponentRef Id="cmpqBCPJn0ySfkszDzYkW3P0B6NgkU" />
+            <ComponentRef Id="cmp_LixkoJhBZXx5pjXjv.m8eUHn2U" />
+            <ComponentRef Id="cmp_hAe6kDpc2s_hwkTGI2K.gMkb_s" />
+            <ComponentRef Id="cmp2w3wIu6kPWR_KRqr_Lzi5P4nCdQ" />
+            <ComponentRef Id="cmpwztjJyVqzH2btzwKFogiNza.Hoo" />
+            <ComponentRef Id="cmpdAGy5Kssc11pG2LwmfldB6r2r1w" />
+            <ComponentRef Id="cmpoAQUxmKXGHbcMqlmkeUmr43JE8I" />
+            <ComponentRef Id="cmpuiqhj_v8xX2ATCPMocTmw_YLgMs" />
+            <ComponentRef Id="cmpwgCyCUWjNimfppYUUd3o4F1DL4I" />
+            <ComponentRef Id="cmpod8mN7Sgqhm58BytIGDDGb9R4bk" />
+            <ComponentRef Id="cmpKPZhg7J2VSe8SdlSgx0TAatOoEQ" />
+            <ComponentRef Id="cmpQi5wn90MwkfIDSYm3aZVKlSO2FM" />
+            <ComponentRef Id="cmpj7pepJvy5GtyNjuBNXR94tNScX4" />
+            <ComponentRef Id="cmpWucx84V3PfN1Y_uIL3JDjTR8t5w" />
+            <ComponentRef Id="cmprQxQSxYIhkcj48cEcQFd4AGXxaw" />
+            <ComponentRef Id="cmpfouLyuBavBdwkgQubPcnSQ8sOxU" />
+            <ComponentRef Id="cmpiKzDYZ_2ynZaR4rcjTXJwDNnOi8" />
+            <ComponentRef Id="cmpvp5kJncIW8l6iAhvqliaDTzXuCc" />
+            <ComponentRef Id="cmpHPRLxDtdM5W845dVRegf7DXU058" />
+            <ComponentRef Id="cmpSqoHNbMDR_cIoRpBe0_u9lbBTBw" />
+            <ComponentRef Id="cmpbzbpnPwvW7JZ4SkXKAcu4_BYqYs" />
+            <ComponentRef Id="cmp0SM4wWSHrHfulD4kFaayK0RAaLk" />
+            <ComponentRef Id="cmpyBNHGYpe.fXrMbQpbiRRWcyKniw" />
+            <ComponentRef Id="cmpjeX0EIT3elDMyMoc0XHg7hUZfSE" />
+            <ComponentRef Id="cmp1u9boi7_eeIFeNaqFi1McH181oA" />
+            <ComponentRef Id="cmpdFITUqkY4DwfuqOqF6OAXMblBh8" />
+            <ComponentRef Id="cmpEIoA4HsB_yAvlwpOmaXnH8aWb1g" />
+            <ComponentRef Id="cmpqu6fMLsLAcEbNET7OGrsJ7ApDnE" />
+            <ComponentRef Id="cmp4s3JQid8.UtMniGAShq0yQ6PlQ0" />
+            <ComponentRef Id="cmpQrt2fTuFVEjzT.PSCcITRd1WrVk" />
+            <ComponentRef Id="cmpMHbx9a7cEhTGuBQTjmuLgXjQdgw" />
+            <ComponentRef Id="cmp__xYgvDAnrpZqpmXfGsGgVUuHLU" />
+            <ComponentRef Id="cmpZo2xF5aqY8xWLMqL.dD2LhM6Ui4" />
+            <ComponentRef Id="cmp_gUJsGeCDvmKk6ILkfYRiR4j2Pk" />
+            <ComponentRef Id="cmpZpe6i9FjAht8Folng9ZZyLwn_lA" />
+            <ComponentRef Id="cmpoinsdKrBQVfmBmspP0pB8ObDa2M" />
+            <ComponentRef Id="cmpPNws1nIxp_6v6KLQzWT5HTgo_xw" />
+            <ComponentRef Id="cmpOa10mPVAo.i1QcJOGKCVdn.6H.M" />
+            <ComponentRef Id="cmpY9Qw8o3QN43wrKOnXtQm4ZA0NGI" />
+            <ComponentRef Id="cmprtIyJ83Mq5lV_WWMv66Qxsx1M0Y" />
+            <ComponentRef Id="cmpLQo68k1ad6WtyhQEbfRn8sNWJz8" />
+            <ComponentRef Id="cmpIZsp_Doh_5rCJbUBvGkoU.dNayM" />
+            <ComponentRef Id="cmpiI_PHcyRuneRD1MwNTiinpzlr7g" />
+            <ComponentRef Id="cmpIPiwWwteJybrC8gmZqUPN2F382U" />
+            <ComponentRef Id="cmpqS9xTbDDHRvobaKCdy7Poc6LYhA" />
+            <ComponentRef Id="cmphaBpiFr5YNnC2pLxIVuVl5oh2PU" />
+            <ComponentRef Id="cmpwQ2iTFCr0O0vzGBgAMcg9xe1ATI" />
+            <ComponentRef Id="cmpduPU83j3N3wVpe8IkCxEmt0AsIM" />
+            <ComponentRef Id="cmpgqG8eeQp8I4QGIeSF4h5XTeEaIM" />
+            <ComponentRef Id="cmp7yJrjH5gxrUyXT8YN9BqyIgsMHw" />
+            <ComponentRef Id="cmpIbrjNJ15kXDaANguhXBfIfEolQ4" />
+            <ComponentRef Id="cmp.v_C.4M9sEkQdoSyUcBNPKyKGB4" />
+            <ComponentRef Id="cmpOsBmJsKmJ1DySE_wj4BOO4ev7Es" />
+            <ComponentRef Id="cmpnuei2EJX9UWDFuQNE3VBwVxmQDk" />
+            <ComponentRef Id="cmpDj6n8W9Ueze6P4b.L7CbPm0A9bE" />
+            <ComponentRef Id="cmpCL12aJSbxf6wo3XWa7vW48pznD8" />
+            <ComponentRef Id="cmpJz6P94x5CZN18v0LdUJrmdpTzfE" />
+            <ComponentRef Id="cmpr7jCK.gjnlh8M9JEvdtS1gqFIko" />
+            <ComponentRef Id="cmp77Fp1n3kGCfVDyPr5lF_a1auM6c" />
+            <ComponentRef Id="cmp2g8IzhNibaeugE843ei7GW6oaws" />
+            <ComponentRef Id="cmpPxKI5QydWqYbc.4e5CKbweUEgrE" />
+            <ComponentRef Id="cmp.cPIE8wNZC6bsmPG.8mq3BzLUqs" />
+            <ComponentRef Id="cmp5YeD1Oa8PW.EEoV9YSI8oVo0nxE" />
+            <ComponentRef Id="cmp3LFrdtiX27x0qAmylaElhvGok9E" />
+            <ComponentRef Id="cmpZwT8gnzuRVm..CC6255rWT2iydg" />
+            <ComponentRef Id="cmpjFtnZEeinqFdO4dwYZqXHNGcPZY" />
+            <ComponentRef Id="cmpqpgPw4mC63p3PAKGqDF_B_ewk.A" />
+            <ComponentRef Id="cmpKNhyCN7U3xGMGuxuQBM3n.DKPV0" />
+            <ComponentRef Id="cmp0mtHwgcMe8Mjdu_fnAAb8F3G6EE" />
+            <ComponentRef Id="cmpuqJ71WSvgZTsk9rsFZxDJ7CcZWo" />
+            <ComponentRef Id="cmpOvbJRouDWzkMlzwWO0Nk9ZZijc4" />
+            <ComponentRef Id="cmpDftzqQBQq0uc0GbdVPWNdWnUCBM" />
+            <ComponentRef Id="cmpnDdpcS2QkzvmELBVQa3lfISDyCg" />
+            <ComponentRef Id="cmpMa4E5_QdfF3uVDj6RUwaK774_sE" />
+            <ComponentRef Id="cmpNs_yXVzoqVx8WH5eZR.Aw66e4L0" />
+            <ComponentRef Id="cmp66VfiJQYybGzHKdVLMlZd5ovS90" />
+            <ComponentRef Id="cmpEeEBRor5B31BGkXBEmtQq26G4eA" />
+            <ComponentRef Id="cmprCeKd9n8Vr.Sqg9tgkh6LTCWOng" />
+            <ComponentRef Id="cmpB3XlB8yMcau3DV4kVngUa_yz9ag" />
+            <ComponentRef Id="cmp.985ZD9_ToQeD1mqvquYJlTzFAs" />
+            <ComponentRef Id="cmp8jbbnz2DmzOusMBE86JqMMJ.gbw" />
+            <ComponentRef Id="cmp3o9E955oGk6I5ROak9qwm.gNwqQ" />
+            <ComponentRef Id="cmpArGV1DLtZRQEBIjMJ3NJoFSUN6Q" />
+            <ComponentRef Id="cmptJMynv0dTiXg_pXZdLZPHBlanuQ" />
+            <ComponentRef Id="cmpV0YX4EO7UxvlyZ11vAEqizw0TP8" />
+            <ComponentRef Id="cmpnDfBmAScXsWp0Mmo8nfJO2zaIHg" />
+            <ComponentRef Id="cmppmfsOo9G8Ae8EOUPS3O8rLVYrY4" />
+            <ComponentRef Id="cmpBCjKEMk.xbL2peYLbQWekPjAPJo" />
+            <ComponentRef Id="cmpYJA4X4BqfB1G9iUETTyPWdIxM78" />
+            <ComponentRef Id="cmpTwk4SKwCEzTFz_z1yDi0W0jyMk8" />
+            <ComponentRef Id="cmpcqCEY2Jvovl5MWL6vX.BpBCWYrI" />
+            <ComponentRef Id="cmpm2G8BFcMqT_BBVZmx1JClE_Lvgo" />
+            <ComponentRef Id="cmpwrmzMwrL6tw2PzTu4Dh.XbQL8XM" />
+            <ComponentRef Id="cmpsq9I1d1oe7d4w7SkMHsP65sgD78" />
+            <ComponentRef Id="cmp.Pu95oi2qlnrBM.AOFWMLCn.2yY" />
+            <ComponentRef Id="cmp0O_IVhoNzz1vx6dU2.1q_ZcPQd8" />
+            <ComponentRef Id="cmpYvWtQKHy4Ec45fuVyQ0WgnjvCvo" />
+            <ComponentRef Id="cmpjr_0v7k6dwiM52j0NU2tCAxCsW8" />
+            <ComponentRef Id="cmpYH7hTQnRSll3PNeF_uHxQ42Q_9g" />
+            <ComponentRef Id="cmpu3BvI6zrAl7OFfsBq0vuIe.GH_g" />
+            <ComponentRef Id="cmpUMSwkVwt9eXgsnNpOvq8Ab5drIw" />
+            <ComponentRef Id="cmpSMwCzcCdJDNna70fx0eWgZVdHkQ" />
+            <ComponentRef Id="cmpdb0W5z2wfdfJ0iBTJAE0z76Xx.Y" />
+            <ComponentRef Id="cmpL2PH5RkcLLtiNkX.PO5fZCpPRX4" />
+            <ComponentRef Id="cmpXnWnFCdHFB9T.z3FS.enGmJl4uQ" />
+            <ComponentRef Id="cmpiPUqBYyXvnfLzoW8A.57XHJkPZU" />
+            <ComponentRef Id="cmpgDxtDeBijrIOJce2DyVx7bJUpO0" />
+            <ComponentRef Id="cmpd0_nfXBLMMcBdevZQBRKELC82aM" />
+            <ComponentRef Id="cmp84lzFDix7HvsOj0ZWBFab3DXdTo" />
+            <ComponentRef Id="cmpEYqGR5roCSSBMOaLdvyH23BYOEE" />
+            <ComponentRef Id="cmpr4RsQwu8RwBMItCQ62Gcs6QsttU" />
+            <ComponentRef Id="cmp9mPCop60EtdJr.7bWXRvzWUbfoQ" />
+            <ComponentRef Id="cmpwnlDfEean6jDD6lOaSZaV7elM_w" />
+            <ComponentRef Id="cmpPBZCVKDon4rcgM6HbAb_gpB6b34" />
+            <ComponentRef Id="cmpxi7WNKf93Eg6VM20s.arTE.PGZw" />
+            <ComponentRef Id="cmp17Eon6p_leWB0fnBcB9vLOAXvLA" />
+            <ComponentRef Id="cmpruvor3wpYBm3ODHtbwPXEr3fbtk" />
+            <ComponentRef Id="cmp2d53KuybP5YZ3US3Ofw0di3mnXw" />
+            <ComponentRef Id="cmpDFKIW1YFkOwlf2ULLukjRa7RREw" />
+            <ComponentRef Id="cmpyTnS3oqpR16UfQ9kfq9_CZmAI4E" />
+            <ComponentRef Id="cmpPuLKsLMp32KAW2t8890jTI_W_Xw" />
+            <ComponentRef Id="cmpYdVdtH0X5tvDMCFJAElpeHmmpbo" />
+            <ComponentRef Id="cmpwC2soyJ9XqVdesrh6eyYxh.N7mY" />
+            <ComponentRef Id="cmpZGTAH6hz_C7gWJAYKrE7u9bFfK4" />
+            <ComponentRef Id="cmpXKtYqi_W7igRKhrjeCF0nC4Ya.w" />
+            <ComponentRef Id="cmpuAXJ472LaaUTE1t1wUBcZhNmqFg" />
+            <ComponentRef Id="cmp2nuuNV9TnNjTXAKANNzCze.LKtA" />
+            <ComponentRef Id="cmp7_6UPHiTpQrpCDxnSPVrGkrHKL4" />
+            <ComponentRef Id="cmp2sJU5R103TDl9bDZZpBj7Vu2Pyw" />
+            <ComponentRef Id="cmpAd4lSIE5VJhrnyONeSLAJ03Gqnk" />
+            <ComponentRef Id="cmp9YfJu8gZeMJ8WCmDJBHcnSSTs6k" />
+            <ComponentRef Id="cmpUnccD_BxTTSmmCLEEjbhus2ggDQ" />
+            <ComponentRef Id="cmp3spCN6JfMyB.mYFIYpb4tsUioNs" />
+            <ComponentRef Id="cmpLCS.9DAvMJYaq2HLmUEV_r9ZWGg" />
+            <ComponentRef Id="cmpK0chqagajQ18YZuxV5E48BHsW28" />
+            <ComponentRef Id="cmpW7eLiHmPg4WHg8p1j.pscRo9.0E" />
+            <ComponentRef Id="cmp0paZRvTOElEeEY5k3tzUnFtOxy4" />
+            <ComponentRef Id="cmpjsJI9sTEJ.TppYxvKTT8mIOJnbY" />
+            <ComponentRef Id="cmpJPY96k4hym_0ZJvViZay3GEMzsg" />
+            <ComponentRef Id="cmp9YnEYaWZodTjflZWiS.UWq1fetU" />
+            <ComponentRef Id="cmp.XYn2zc3pvNo8LRiGUmDfeKr4M0" />
+            <ComponentRef Id="cmpLRWZ04kGMrlMtaSeKvXOsdg6iJc" />
+            <ComponentRef Id="cmp3Bx2r6tzKy4Okz7nQl6D6Tcj9rA" />
+            <ComponentRef Id="cmpDIlXGVKaNuuIbfgnt7DmoMCrNME" />
+            <ComponentRef Id="cmpp5nN3LTPFU6wh3Er3iioe.eToLU" />
+            <ComponentRef Id="cmpYfZ9op8A0Lhg7wNeGN9xRMJ5TuQ" />
+            <ComponentRef Id="cmpzvbhVR6Z_oPzQVyEsj6VynTHicU" />
+            <ComponentRef Id="cmp27.tnflvefqiI_b1v7lMAAiYKXQ" />
+            <ComponentRef Id="cmpepqSY4m2C7YBrgPfCVOc98pzht0" />
+            <ComponentRef Id="cmppZ7e5bwis_524y2VwdXtAZDf_KM" />
+            <ComponentRef Id="cmpjVE8xIr.O.FPlQ3BrV1xNZMDeKs" />
+            <ComponentRef Id="cmp7EmB4UxwDr_1CF4QozqhQCHyEug" />
+            <ComponentRef Id="cmpWuLLo.yDvckJYqm4gjsD8kyvjMI" />
+            <ComponentRef Id="cmpXsAOO.DxTCxwK5Sg9F.nXLw73Is" />
+            <ComponentRef Id="cmpPj3bSGHLL9UR.qvSwI3818d52P4" />
+            <ComponentRef Id="cmpKPMQaSrOJyJXI.MiKozub707kfM" />
+            <ComponentRef Id="cmpCRXmGuk09h.ZM.Aq0urb5DtNSsQ" />
+            <ComponentRef Id="cmpEQ2dPEssAQbdy1sdUAsnKgueLag" />
+            <ComponentRef Id="cmp.MC.2WVlZP9Ai8W5mkKOBNfPPJ4" />
+            <ComponentRef Id="cmpXCb1502sZd_6Ssb8jQVYF3t9xxk" />
+            <ComponentRef Id="cmp1mhylHw9iOGvV6H.ZDzq1oMxk64" />
+            <ComponentRef Id="cmpBggQWIIqPI1HceQ7PfSuSfEd8x0" />
+            <ComponentRef Id="cmppUDEnG1hTQFkd20JESAHP4jN.z8" />
+            <ComponentRef Id="cmpc6QVR6MvhyArAb54eq6E6ibOjNk" />
+            <ComponentRef Id="cmpQIJGC7riAYLXva569_R0Gg6PyeU" />
+            <ComponentRef Id="cmpMBh2uv9aqTlV_7DorfSi6xNscPU" />
+            <ComponentRef Id="cmpOzk9Bdrwu0ySrKG28VZrHHhNVkQ" />
+            <ComponentRef Id="cmp7m2qgH4khaGEwXPo6V__VjZjerk" />
+            <ComponentRef Id="cmp2ePGutvT7T_lDOXTcOnjech_.7c" />
+            <ComponentRef Id="cmpfpfYdKB9gEod6GIoOiy8iSOYKT4" />
+            <ComponentRef Id="cmpxXx.DU4xN1yMckcOYn95i5YJJnw" />
+            <ComponentRef Id="cmpkkryXk.f3uXS_oZqo8oPRccGgqk" />
+            <ComponentRef Id="cmphz9Vuy8.2zf3cDdxjT4EPgO07xY" />
+            <ComponentRef Id="cmp_4ZQMJ_fwMJ3qIFHEGwlT1GRGl0" />
+            <ComponentRef Id="cmpQHXWegbBstyVK1tztjsaph8qZeU" />
+            <ComponentRef Id="cmpMv803IJBDjsqemDPF1Raz33riwY" />
+            <ComponentRef Id="cmpV1qLjew7hJeqwlR_6vBF5Kqy8oE" />
+            <ComponentRef Id="cmp3yPpOkzfheuBQsOaRlSKbGquhxc" />
+            <ComponentRef Id="cmpdaFEfV2JkZKtooDNQRviwb8iaYo" />
+            <ComponentRef Id="cmpXVnXcODt3mkifHlLGRpF3130aUk" />
+            <ComponentRef Id="cmp6NIAdrxFaCP56RchHAb.UPa.iro" />
+            <ComponentRef Id="cmpwuyhFwcOWhkLSoR9x29_35DoMYs" />
+            <ComponentRef Id="cmp.IWLRWUMwJ8otOoV9L2vo3Botp8" />
+            <ComponentRef Id="cmpeQ9j0LU3UL7gpExP6nUIsi_tv_Q" />
+            <ComponentRef Id="cmpyt0xl9iZ3SmI4gY6i5foYx6_Vv0" />
+        </ComponentGroup>
+    </Fragment>
+</Wix>

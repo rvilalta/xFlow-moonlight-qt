@@ -183,6 +183,7 @@ SOURCES += \
     streaming/session.cpp \
     streaming/audio/audio.cpp \
     streaming/audio/renderers/sdlaud.cpp \
+    streaming/CustomNetworkManager.cpp \
     gui/computermodel.cpp \
     gui/appmodel.cpp \
     streaming/streamutils.cpp \
@@ -214,6 +215,7 @@ HEADERS += \
     cli/quitstream.h \
     cli/startstream.h \
     settings/streamingpreferences.h \
+    streaming/CustomNetworkManager.h \
     streaming/input/input.h \
     streaming/session.h \
     streaming/audio/renderers/renderer.h \
@@ -267,7 +269,7 @@ libva-wayland {
     PKGCONFIG += libva-wayland
     DEFINES += HAVE_LIBVA_WAYLAND
 }
-libva-drm {
+libva-wayland {
     message(VAAPI DRM support enabled)
 
     PKGCONFIG += libva-drm
@@ -286,18 +288,6 @@ mmal {
     DEFINES += HAVE_MMAL
     SOURCES += streaming/video/ffmpeg-renderers/mmal.cpp
     HEADERS += streaming/video/ffmpeg-renderers/mmal.h
-
-    # We suppress EGL usage when MMAL is available because MMAL has
-    # significantly better performance than EGL on the Pi. Setting
-    # this option allows EGL usage even if built with MMAL support.
-    #
-    # It is highly recommended to also build with 'glslow' to avoid
-    # EGL being preferred if direct DRM rendering is available.
-    allow-egl-with-mmal {
-        message(Allowing EGL usage with MMAL enabled)
-
-        DEFINES += ALLOW_EGL_WITH_MMAL
-    }
 }
 libdrm {
     message(DRM renderer selected)
@@ -318,9 +308,6 @@ cuda {
     DEFINES += HAVE_CUDA
     SOURCES += streaming/video/ffmpeg-renderers/cuda.cpp
     HEADERS += streaming/video/ffmpeg-renderers/cuda.h
-
-    # ffnvcodec uses libdl in cuda_load_functions()/cuda_free_functions()
-    LIBS += -ldl
 }
 config_EGL {
     message(EGL renderer selected)
@@ -439,6 +426,10 @@ QML_IMPORT_PATH =
 
 # Additional import path used to resolve QML modules just for Qt Quick Designer
 QML_DESIGNER_IMPORT_PATH =
+
+QQmlApplicationEngine {
+    qmlProtectModule("Qt.Network", 1);
+}
 
 win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../moonlight-common-c/release/ -lmoonlight-common-c
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../moonlight-common-c/debug/ -lmoonlight-common-c

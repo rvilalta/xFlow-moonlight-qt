@@ -7,10 +7,6 @@
 #include "utils.h"
 #include <streaming/streamutils.h>
 
-#ifdef HAVE_LIBVA_DRM
-#include <xf86drm.h>
-#endif
-
 #include <SDL_syswm.h>
 
 #include <unistd.h>
@@ -28,10 +24,6 @@ VAAPIRenderer::VAAPIRenderer(int decoderSelectionPass)
 {
 #ifdef HAVE_EGL
     SDL_zero(m_PrimeDescriptor);
-#endif
-
-#ifdef HAVE_LIBVA_DRM
-    m_DrmFd = -1;
 #endif
 
     SDL_zero(m_OverlayImage);
@@ -63,12 +55,6 @@ VAAPIRenderer::~VAAPIRenderer()
             vaTerminate(display);
         }
     }
-
-#ifdef HAVE_LIBVA_DRM
-    if (m_DrmFd >= 0) {
-        close(m_DrmFd);
-    }
-#endif
 
     if (m_OverlayMutex != nullptr) {
         SDL_DestroyMutex(m_OverlayMutex);
@@ -123,41 +109,7 @@ VAAPIRenderer::openDisplay(SDL_Window* window)
 #if defined(SDL_VIDEO_DRIVER_KMSDRM) && defined(HAVE_LIBVA_DRM) && SDL_VERSION_ATLEAST(2, 0, 15)
     else if (info.subsystem == SDL_SYSWM_KMSDRM) {
         SDL_assert(info.info.kmsdrm.drm_fd >= 0);
-
-        // It's possible to enter this function several times as we're probing VA drivers.
-        // Make sure to only duplicate the DRM FD the first time through.
-        if (m_DrmFd < 0) {
-            // If the KMSDRM FD is not a render node FD, open the render node for libva to use.
-            // Since libva 2.20, using a primary node will fail in vaGetDriverNames().
-            if (drmGetNodeTypeFromFd(info.info.kmsdrm.drm_fd) != DRM_NODE_RENDER) {
-                char* renderNodePath = drmGetRenderDeviceNameFromFd(info.info.kmsdrm.drm_fd);
-                if (renderNodePath) {
-                    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION,
-                                "Opening render node for VAAPI: %s",
-                                renderNodePath);
-                    m_DrmFd = open(renderNodePath, O_RDWR | O_CLOEXEC);
-                    free(renderNodePath);
-                    if (m_DrmFd < 0) {
-                        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION,
-                                     "Failed to open render node: %d",
-                                     errno);
-                        return nullptr;
-                    }
-                }
-                else {
-                    SDL_LogWarn(SDL_LOG_CATEGORY_APPLICATION,
-                                "Failed to get render node path. Using the SDL FD directly.");
-                    m_DrmFd = dup(info.info.kmsdrm.drm_fd);
-                }
-            }
-            else {
-                SDL_LogWarn(SDL_LOG_CATEGORY_APPLICATION,
-                            "KMSDRM FD is already a render node. Using the SDL FD directly.");
-                m_DrmFd = dup(info.info.kmsdrm.drm_fd);
-            }
-        }
-
-        display = vaGetDisplayDRM(m_DrmFd);
+        display = vaGetDisplayDRM(info.info.kmsdrm.drm_fd);
         if (display == nullptr) {
             SDL_LogError(SDL_LOG_CATEGORY_APPLICATION,
                          "Unable to open DRM display for VAAPI");
@@ -973,14 +925,14 @@ VAAPIRenderer::initializeEGL(EGLDisplay dpy,
     }
     else if (!m_EglImageFactory.supportsImportingModifier(dpy, descriptor.layers[0].drm_format, descriptor.objects[0].drm_format_modifier)) {
         SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION,
-                    "Exporting separate layers due to lack of support for importing format and modifier: %08x %016" PRIx64,
+                    "Exporting separate layers due to lack of support for importing format and modifier: %08x %016lx",
                     descriptor.layers[0].drm_format,
                     descriptor.objects[0].drm_format_modifier);
         m_EglExportType = EglExportType::Separate;
     }
     else {
         SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION,
-                    "Exporting composed layers with format and modifier: %08x %016" PRIx64,
+                    "Exporting composed layers with format and modifier: %08x %016lx",
                     descriptor.layers[0].drm_format,
                     descriptor.objects[0].drm_format_modifier);
         m_EglExportType = EglExportType::Composed;
@@ -1002,7 +954,7 @@ VAAPIRenderer::initializeEGL(EGLDisplay dpy,
             else if (!m_EglImageFactory.supportsImportingModifier(dpy, descriptor.layers[i].drm_format,
                                                                   descriptor.objects[descriptor.layers[i].object_index[0]].drm_format_modifier)) {
                 SDL_LogWarn(SDL_LOG_CATEGORY_APPLICATION,
-                            "EGL implementation lacks support for importing format and modifier: %08x %016" PRIx64,
+                            "EGL implementation lacks support for importing format and modifier: %08x %016lx",
                             descriptor.layers[i].drm_format,
                             descriptor.objects[descriptor.layers[i].object_index[0]].drm_format_modifier);
             }

@@ -177,9 +177,8 @@ enum AVPixelFormat FFmpegVideoDecoder::ffGetFormat(AVCodecContext* context,
         }
     }
 
-    // Failed to match the preferred pixel formats. Try non-preferred pixel format options
-    // for non-hwaccel decoders if we didn't have a required pixel format to use.
-    if (decoder->m_HwDecodeCfg == nullptr && decoder->m_RequiredPixelFormat == AV_PIX_FMT_NONE) {
+    // Failed to match the preferred pixel formats. Try non-preferred options for non-hwaccel decoders.
+    if (decoder->m_HwDecodeCfg == nullptr) {
         for (p = pixFmts; *p != -1; p++) {
             if (decoder->m_FrontendRenderer->isPixelFormatSupported(decoder->m_VideoFormat, *p) &&
                     decoder->m_BackendRenderer->prepareDecoderContextInGetFormat(context, *p)) {
@@ -194,7 +193,6 @@ enum AVPixelFormat FFmpegVideoDecoder::ffGetFormat(AVCodecContext* context,
 FFmpegVideoDecoder::FFmpegVideoDecoder(bool testOnly)
     : m_Pkt(av_packet_alloc()),
       m_VideoDecoderCtx(nullptr),
-      m_RequiredPixelFormat(AV_PIX_FMT_NONE),
       m_DecodeBuffer(1024 * 1024, 0),
       m_HwDecodeCfg(nullptr),
       m_BackendRenderer(nullptr),
@@ -358,7 +356,7 @@ bool FFmpegVideoDecoder::createFrontendRenderer(PDECODER_PARAMETERS params, bool
     return true;
 }
 
-bool FFmpegVideoDecoder::completeInitialization(const AVCodec* decoder, enum AVPixelFormat requiredFormat, PDECODER_PARAMETERS params, bool testFrame, bool useAlternateFrontend)
+bool FFmpegVideoDecoder::completeInitialization(const AVCodec* decoder, PDECODER_PARAMETERS params, bool testFrame, bool useAlternateFrontend)
 {
     // In test-only mode, we should only see test frames
     SDL_assert(!m_TestOnly || testFrame);
@@ -368,7 +366,6 @@ bool FFmpegVideoDecoder::completeInitialization(const AVCodec* decoder, enum AVP
         return false;
     }
 
-    m_RequiredPixelFormat = requiredFormat;
     m_StreamFps = params->frameRate;
     m_VideoFormat = params->videoFormat;
 
@@ -417,7 +414,7 @@ bool FFmpegVideoDecoder::completeInitialization(const AVCodec* decoder, enum AVP
     // Setup decoding parameters
     m_VideoDecoderCtx->width = params->width;
     m_VideoDecoderCtx->height = params->height;
-    m_VideoDecoderCtx->pix_fmt = requiredFormat != AV_PIX_FMT_NONE ? requiredFormat : m_FrontendRenderer->getPreferredPixelFormat(params->videoFormat);
+    m_VideoDecoderCtx->pix_fmt = m_FrontendRenderer->getPreferredPixelFormat(params->videoFormat);
     m_VideoDecoderCtx->get_format = ffGetFormat;
 
     AVDictionary* options = nullptr;
@@ -824,7 +821,6 @@ IFFmpegRenderer* FFmpegVideoDecoder::createHwAccelRenderer(const AVCodecHWConfig
 }
 
 bool FFmpegVideoDecoder::tryInitializeRenderer(const AVCodec* decoder,
-                                               enum AVPixelFormat requiredFormat,
                                                PDECODER_PARAMETERS params,
                                                const AVCodecHWConfig* hwConfig,
                                                std::function<IFFmpegRenderer*()> createRendererFunc)
@@ -854,10 +850,7 @@ bool FFmpegVideoDecoder::tryInitializeRenderer(const AVCodec* decoder,
         SDL_assert(m_BackendRenderer == nullptr);
         if ((m_BackendRenderer = createRendererFunc()) != nullptr &&
                 m_BackendRenderer->initialize((m_TestOnly || m_BackendRenderer->needsTestFrame()) ? &testFrameDecoderParams : params) &&
-                completeInitialization(decoder, requiredFormat,
-                                       (m_TestOnly || m_BackendRenderer->needsTestFrame()) ? &testFrameDecoderParams : params,
-                                       m_TestOnly || m_BackendRenderer->needsTestFrame(),
-                                       i == 0 /* EGL/DRM */)) {
+                completeInitialization(decoder, (m_TestOnly || m_BackendRenderer->needsTestFrame()) ? &testFrameDecoderParams : params, m_TestOnly || m_BackendRenderer->needsTestFrame(), i == 0 /* EGL/DRM */)) {
             if (m_TestOnly) {
                 // This decoder is only for testing capabilities, so don't bother
                 // creating a usable renderer
@@ -869,7 +862,7 @@ bool FFmpegVideoDecoder::tryInitializeRenderer(const AVCodec* decoder,
                 reset();
                 if ((m_BackendRenderer = createRendererFunc()) != nullptr &&
                         m_BackendRenderer->initialize(params) &&
-                        completeInitialization(decoder, requiredFormat, params, false, i == 0 /* EGL/DRM */)) {
+                        completeInitialization(decoder, params, false, i == 0 /* EGL/DRM */)) {
                     return true;
                 }
                 else {
@@ -898,10 +891,7 @@ bool FFmpegVideoDecoder::tryInitializeRenderer(const AVCodec* decoder,
     { \
         RENDERER_TYPE renderer; \
         if (renderer.getPreferredPixelFormat(params->videoFormat) == decoder->pix_fmts[i]) { \
-            SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, \
-                        "Trying " #RENDERER_TYPE " for codec %s due to preferred pixel format: 0x%x", \
-                        decoder->name, decoder->pix_fmts[i]); \
-            if (tryInitializeRenderer(decoder, decoder->pix_fmts[i], params, nullptr, \
+            if (tryInitializeRenderer(decoder, params, nullptr, \
                                       []() -> IFFmpegRenderer* { return new RENDERER_TYPE(); })) { \
                 SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, \
                             "Chose " #RENDERER_TYPE " for codec %s due to preferred pixel format: 0x%x", \
@@ -916,10 +906,7 @@ bool FFmpegVideoDecoder::tryInitializeRenderer(const AVCodec* decoder,
         RENDERER_TYPE renderer; \
         if (decoder->pix_fmts[i] != renderer.getPreferredPixelFormat(params->videoFormat) && \
             renderer.isPixelFormatSupported(params->videoFormat, decoder->pix_fmts[i])) { \
-            SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, \
-                        "Trying " #RENDERER_TYPE " for codec %s due to compatible pixel format: 0x%x", \
-                        decoder->name, decoder->pix_fmts[i]); \
-            if (tryInitializeRenderer(decoder, decoder->pix_fmts[i], params, nullptr, \
+            if (tryInitializeRenderer(decoder, params, nullptr, \
                                       []() -> IFFmpegRenderer* { return new RENDERER_TYPE(); })) { \
                 SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, \
                             "Chose " #RENDERER_TYPE " for codec %s due to compatible pixel format: 0x%x", \
@@ -937,6 +924,17 @@ bool FFmpegVideoDecoder::tryInitializeRendererForUnknownDecoder(const AVCodec* d
         return false;
     }
 
+#ifdef HAVE_MMAL
+    // Only enable V4L2M2M by default on non-MMAL (RPi) builds. The performance
+    // of the V4L2M2M wrapper around MMAL is not enough for 1080p 60 FPS, so we
+    // would rather show the missing hardware acceleration warning when the user
+    // is in Full KMS mode rather than try to use a poorly performing hwaccel.
+    // See discussion on https://github.com/jc-kynesim/rpi-ffmpeg/pull/25
+    if (strcmp(decoder->name, "h264_v4l2m2m") == 0) {
+        return false;
+    }
+#endif
+
     if (tryHwAccel) {
         // This might be a hwaccel decoder, so try any hw configs first
         for (int i = 0;; i++) {
@@ -947,7 +945,7 @@ bool FFmpegVideoDecoder::tryInitializeRendererForUnknownDecoder(const AVCodec* d
             }
 
             // Initialize the hardware codec and submit a test frame if the renderer needs it
-            if (tryInitializeRenderer(decoder, AV_PIX_FMT_NONE, params, config,
+            if (tryInitializeRenderer(decoder, params, config,
                                       [config]() -> IFFmpegRenderer* { return createHwAccelRenderer(config, 0); })) {
                 return true;
             }
@@ -958,13 +956,13 @@ bool FFmpegVideoDecoder::tryInitializeRendererForUnknownDecoder(const AVCodec* d
         // Supported output pixel formats are unknown. We'll just try DRM/SDL and hope it can cope.
 
 #if defined(HAVE_DRM) && defined(GL_IS_SLOW)
-        if (tryInitializeRenderer(decoder, AV_PIX_FMT_NONE, params, nullptr,
+        if (tryInitializeRenderer(decoder, params, nullptr,
                                   []() -> IFFmpegRenderer* { return new DrmRenderer(); })) {
             return true;
         }
 #endif
 
-        if (tryInitializeRenderer(decoder, AV_PIX_FMT_NONE, params, nullptr,
+        if (tryInitializeRenderer(decoder, params, nullptr,
                                   []() -> IFFmpegRenderer* { return new SdlRenderer(); })) {
             return true;
         }
@@ -1020,29 +1018,7 @@ bool FFmpegVideoDecoder::tryInitializeRendererForUnknownDecoder(const AVCodec* d
     }
 #endif
 
-    SDL_LogWarn(SDL_LOG_CATEGORY_APPLICATION,
-                "No renderer can handle output from decoder: %s",
-                decoder->name);
-
     // If we made it here, we couldn't find anything
-    return false;
-}
-
-bool FFmpegVideoDecoder::isDecoderIgnored(const AVCodec *decoder)
-{
-    Q_UNUSED(decoder);
-
-#if defined(HAVE_MMAL) && !defined(ALLOW_EGL_WITH_MMAL)
-    // Only enable V4L2M2M by default on non-MMAL (RPi) builds. The performance
-    // of the V4L2M2M wrapper around MMAL is not enough for 1080p 60 FPS, so we
-    // would rather show the missing hardware acceleration warning when the user
-    // is in Full KMS mode rather than try to use a poorly performing hwaccel.
-    // See discussion on https://github.com/jc-kynesim/rpi-ffmpeg/pull/25
-    if (strcmp(decoder->name, "h264_v4l2m2m") == 0) {
-        return true;
-    }
-#endif
-
     return false;
 }
 
@@ -1137,11 +1113,6 @@ bool FFmpegVideoDecoder::initialize(PDECODER_PARAMETERS params)
                 continue;
             }
 
-            // Skip ignored decoders
-            if (isDecoderIgnored(decoder)) {
-                continue;
-            }
-
             // Look for the first matching hwaccel hardware decoder (pass 0)
             for (int i = 0;; i++) {
                 const AVCodecHWConfig *config = avcodec_get_hw_config(decoder, i);
@@ -1151,7 +1122,7 @@ bool FFmpegVideoDecoder::initialize(PDECODER_PARAMETERS params)
                 }
 
                 // Initialize the hardware codec and submit a test frame if the renderer needs it
-                if (tryInitializeRenderer(decoder, AV_PIX_FMT_NONE, params, config,
+                if (tryInitializeRenderer(decoder, params, config,
                                           [config]() -> IFFmpegRenderer* { return createHwAccelRenderer(config, 0); })) {
                     return true;
                 }
@@ -1178,11 +1149,6 @@ bool FFmpegVideoDecoder::initialize(PDECODER_PARAMETERS params)
                 continue;
             }
 
-            // Skip ignored decoders
-            if (isDecoderIgnored(decoder)) {
-                continue;
-            }
-
             // Try to initialize this decoder both as hwaccel and non-hwaccel
             if (tryInitializeRendererForUnknownDecoder(decoder, params, true)) {
                 return true;
@@ -1204,11 +1170,6 @@ bool FFmpegVideoDecoder::initialize(PDECODER_PARAMETERS params)
                 continue;
             }
 
-            // Skip ignored decoders
-            if (isDecoderIgnored(decoder)) {
-                continue;
-            }
-
             // Look for the first matching hwaccel hardware decoder (pass 1)
             // This picks up "second-tier" hwaccels like CUDA.
             for (int i = 0;; i++) {
@@ -1219,7 +1180,7 @@ bool FFmpegVideoDecoder::initialize(PDECODER_PARAMETERS params)
                 }
 
                 // Initialize the hardware codec and submit a test frame if the renderer needs it
-                if (tryInitializeRenderer(decoder, AV_PIX_FMT_NONE, params, config,
+                if (tryInitializeRenderer(decoder, params, config,
                                           [config]() -> IFFmpegRenderer* { return createHwAccelRenderer(config, 1); })) {
                     return true;
                 }
@@ -1250,11 +1211,6 @@ bool FFmpegVideoDecoder::initialize(PDECODER_PARAMETERS params)
             // Instead, we tell tryInitializeRendererForUnknownDecoder() not to
             // try hwaccel for this decoder.
             if (decoder->capabilities & AV_CODEC_CAP_HARDWARE) {
-                continue;
-            }
-
-            // Skip ignored decoders
-            if (isDecoderIgnored(decoder)) {
                 continue;
             }
 

@@ -76,12 +76,10 @@ DrmRenderer::DrmRenderer(bool hwaccel, IFFmpegRenderer *backendRenderer)
       m_CurrentFbId(0),
       m_LastFullRange(false),
       m_LastColorSpace(-1),
-      m_Plane(nullptr),
       m_ColorEncodingProp(nullptr),
       m_ColorRangeProp(nullptr),
       m_HdrOutputMetadataProp(nullptr),
       m_ColorspaceProp(nullptr),
-      m_Version(nullptr),
       m_HdrOutputMetadataBlobId(0),
       m_SwFrameMapper(this),
       m_CurrentSwFrameIdx(0)
@@ -135,14 +133,6 @@ DrmRenderer::~DrmRenderer()
 
     if (m_ColorspaceProp != nullptr) {
         drmModeFreeProperty(m_ColorspaceProp);
-    }
-
-    if (m_Plane != nullptr) {
-        drmModeFreePlane(m_Plane);
-    }
-
-    if (m_Version != nullptr) {
-        drmFreeVersion(m_Version);
     }
 
     if (m_HwContext != nullptr) {
@@ -256,18 +246,6 @@ bool DrmRenderer::initialize(PDECODER_PARAMETERS params)
             return false;
         }
     }
-
-    // Fetch version details about the DRM driver to use later
-    m_Version = drmGetVersion(m_DrmFd);
-    if (m_Version == nullptr) {
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION,
-                     "drmGetVersion() failed: %d",
-                     errno);
-        return false;
-    }
-
-    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION,
-                "GPU driver: %s", m_Version->name);
 
     // Create the device context first because it is needed whether we can
     // actually use direct rendering or not.
@@ -444,10 +422,7 @@ bool DrmRenderer::initialize(PDECODER_PARAMETERS params)
                 continue;
             }
 
-            // We don't check plane->crtc_id here because we want to be able to reuse the primary plane
-            // that may owned by Qt and in use on a CRTC prior to us taking over DRM master. When we give
-            // control back to Qt, it will repopulate the plane with the FB it owns and render as normal.
-            if ((plane->possible_crtcs & (1 << crtcIndex))) {
+            if ((plane->possible_crtcs & (1 << crtcIndex)) && plane->crtc_id == 0) {
                 drmModeObjectPropertiesPtr props = drmModeObjectGetProperties(m_DrmFd, planeRes->planes[i], DRM_MODE_OBJECT_PLANE);
                 if (props != nullptr) {
                     for (uint32_t j = 0; j < props->count_props; j++) {
@@ -474,13 +449,7 @@ bool DrmRenderer::initialize(PDECODER_PARAMETERS params)
                 }
             }
 
-            // Store the plane details for use during render format testing
-            if (m_PlaneId != 0) {
-                m_Plane = plane;
-            }
-            else {
-                drmModeFreePlane(plane);
-            }
+            drmModeFreePlane(plane);
         }
     }
 
@@ -593,35 +562,6 @@ int DrmRenderer::getRendererAttributes()
 
     // This renderer does not buffer any frames in the graphics pipeline
     attributes |= RENDERER_ATTRIBUTE_NO_BUFFERING;
-
-#ifdef GL_IS_SLOW
-    // Restrict streaming resolution to 1080p on the Pi 4 while in the desktop environment.
-    // EGL performance is extremely poor and just barely hits 1080p60 on Bookworm. This also
-    // covers the MMAL H.264 case which maxes out at 1080p60 too.
-    if (!m_SupportsDirectRendering &&
-            (strcmp(m_Version->name, "vc4") == 0 || strcmp(m_Version->name, "v3d") == 0) &&
-            qgetenv("RPI_ALLOW_EGL_4K") != "1") {
-        drmDevicePtr device;
-
-        if (drmGetDevice(m_DrmFd, &device) == 0) {
-            if (device->bustype == DRM_BUS_PLATFORM) {
-                for (int i = 0; device->deviceinfo.platform->compatible[i]; i++) {
-                    QString compatibleId(device->deviceinfo.platform->compatible[i]);
-                    if (compatibleId == "brcm,bcm2835-vc4" || compatibleId == "brcm,bcm2711-vc5" || compatibleId == "brcm,2711-v3d") {
-                        SDL_LogWarn(SDL_LOG_CATEGORY_APPLICATION,
-                                    "Streaming resolution is limited to 1080p on the Pi 4 inside the desktop environment!");
-                        SDL_LogWarn(SDL_LOG_CATEGORY_APPLICATION,
-                                    "Run Moonlight directly from the console to stream above 1080p resolution!");
-                        attributes |= RENDERER_ATTRIBUTE_1080P_MAX;
-                        break;
-                    }
-                }
-            }
-
-            drmFreeDevice(&device);
-        }
-    }
-#endif
 
     return attributes;
 }
@@ -912,7 +852,7 @@ Exit:
     return ret;
 }
 
-bool DrmRenderer::addFbForFrame(AVFrame *frame, uint32_t* newFbId, bool testMode)
+bool DrmRenderer::addFbForFrame(AVFrame *frame, uint32_t* newFbId)
 {
     AVDRMFrameDescriptor mappedFrame;
     AVDRMFrameDescriptor* drmFrame;
@@ -990,40 +930,12 @@ bool DrmRenderer::addFbForFrame(AVFrame *frame, uint32_t* newFbId, bool testMode
 
     if (err < 0) {
         SDL_LogError(SDL_LOG_CATEGORY_APPLICATION,
-                     "drmModeAddFB2[WithModifiers]() failed: %d",
+                     "drmModeAddFB2WithModifiers() failed: %d",
                      errno);
         return false;
     }
 
-    if (testMode) {
-        // Check if plane can actually be imported
-        for (uint32_t i = 0; i < m_Plane->count_formats; i++) {
-            if (drmFrame->layers[0].format == m_Plane->formats[i]) {
-                SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION,
-                            "Selected DRM plane supports chosen decoding format: %08x",
-                            drmFrame->layers[0].format);
-                return true;
-            }
-        }
-
-        // TODO: We can also check the modifier support using the IN_FORMATS property,
-        // but checking format alone is probably enough for real world cases since we're
-        // either getting linear buffers from software mapping or DMA-BUFs from the
-        // hardware decoder.
-        //
-        // Hopefully no actual hardware vendors are dumb enough to ship display hardware
-        // or drivers that lack support for the format modifiers required by their own
-        // video decoders.
-
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION,
-                     "Selected DRM plane doesn't support chosen decoding format: %08x",
-                     drmFrame->layers[0].format);
-        drmModeRmFB(m_DrmFd, *newFbId);
-        return false;
-    }
-    else {
-        return true;
-    }
+    return true;
 }
 
 void DrmRenderer::renderFrame(AVFrame* frame)
@@ -1043,7 +955,7 @@ void DrmRenderer::renderFrame(AVFrame* frame)
     uint32_t lastFbId = m_CurrentFbId;
 
     // Register a frame buffer object for this frame
-    if (!addFbForFrame(frame, &m_CurrentFbId, false)) {
+    if (!addFbForFrame(frame, &m_CurrentFbId)) {
         m_CurrentFbId = lastFbId;
         return;
     }
@@ -1163,23 +1075,16 @@ bool DrmRenderer::needsTestFrame()
 }
 
 bool DrmRenderer::testRenderFrame(AVFrame* frame) {
-    uint32_t fbId;
+   uint32_t fbId;
 
-    // If we don't even have a plane, we certainly can't render
-    if (!m_Plane) {
-        return false;
-    }
+   // Ensure we can export DRM PRIME frames (if applicable) and
+   // add a FB object with the provided DRM format.
+   if (!addFbForFrame(frame, &fbId)) {
+       return false;
+   }
 
-    // Ensure we can export DRM PRIME frames (if applicable) and
-    // add a FB object with the provided DRM format. Ask for the
-    // extended validation to ensure the chosen plane supports
-    // the format too.
-    if (!addFbForFrame(frame, &fbId, true)) {
-        return false;
-    }
-
-    drmModeRmFB(m_DrmFd, fbId);
-    return true;
+   drmModeRmFB(m_DrmFd, fbId);
+   return true;
 }
 
 bool DrmRenderer::isDirectRenderingSupported()
@@ -1189,16 +1094,10 @@ bool DrmRenderer::isDirectRenderingSupported()
 
 int DrmRenderer::getDecoderColorspace()
 {
-    // The starfive driver used on the VisionFive 2 doesn't support BT.601,
-    // so we will use BT.709 instead. Rockchip doesn't support BT.709, even
-    // in some cases where it exposes COLOR_ENCODING properties, so we stick
-    // to BT.601 which seems to be the default for YUV planes on Linux.
-    if (strcmp(m_Version->name, "starfive") == 0) {
-        return COLORSPACE_REC_709;
-    }
-    else {
-        return COLORSPACE_REC_601;
-    }
+    // Some DRM implementations (VisionFive) don't support BT.601 color encoding,
+    // so let's default to BT.709, which all drivers that support COLOR_ENCODING
+    // seem to support.
+    return COLORSPACE_REC_709;
 }
 
 const char* DrmRenderer::getDrmColorEncodingValue(AVFrame* frame)
@@ -1239,23 +1138,6 @@ bool DrmRenderer::canExportEGL() {
         return false;
     }
 
-#if defined(HAVE_MMAL) && !defined(ALLOW_EGL_WITH_MMAL)
-    // EGL rendering is so slow on the Raspberry Pi 4 that we should basically
-    // never use it. It is suitable for 1080p 30 FPS on a good day, and much
-    // much less than that if you decide to do something crazy like stream
-    // in full-screen. MMAL is the ideal rendering API for Buster and Bullseye,
-    // but it's gone in Bookworm. Fortunately, Bookworm has a more efficient
-    // rendering pipeline that makes EGL mostly usable as long as we stick
-    // to a 1080p 60 FPS maximum.
-    if (qgetenv("RPI_ALLOW_EGL_RENDER") != "1") {
-        SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION,
-                    "Disabling EGL rendering due to low performance on Raspberry Pi 4");
-        SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION,
-                    "Set RPI_ALLOW_EGL_RENDER=1 to override");
-        return false;
-    }
-#endif
-
     SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION,
                 "DRM backend supports exporting EGLImage");
     return true;
@@ -1273,13 +1155,8 @@ bool DrmRenderer::initializeEGL(EGLDisplay display,
 
 ssize_t DrmRenderer::exportEGLImages(AVFrame *frame, EGLDisplay dpy,
                                      EGLImage images[EGL_MAX_PLANES]) {
-    if (frame->format != AV_PIX_FMT_DRM_PRIME) {
-        SDL_LogWarn(SDL_LOG_CATEGORY_APPLICATION,
-                    "EGLImage export requires hardware-backed frames");
-        return -1;
-    }
-
     AVDRMFrameDescriptor* drmFrame = (AVDRMFrameDescriptor*)frame->data[0];
+
     return m_EglImageFactory.exportDRMImages(frame, drmFrame, dpy, images);
 }
 

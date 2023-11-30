@@ -30,11 +30,7 @@ public:
     virtual IFFmpegRenderer* getBackendRenderer();
 
 private:
-    bool completeInitialization(const AVCodec* decoder,
-                                enum AVPixelFormat requiredFormat,
-                                PDECODER_PARAMETERS params,
-                                bool testFrame,
-                                bool useAlternateFrontend);
+    bool completeInitialization(const AVCodec* decoder, PDECODER_PARAMETERS params, bool testFrame, bool useAlternateFrontend);
 
     void stringifyVideoStats(VIDEO_STATS& stats, char* output, int length);
 
@@ -44,14 +40,11 @@ private:
 
     bool createFrontendRenderer(PDECODER_PARAMETERS params, bool useAlternateFrontend);
 
-    bool isDecoderIgnored(const AVCodec* decoder);
-
     bool tryInitializeRendererForUnknownDecoder(const AVCodec* decoder,
                                                 PDECODER_PARAMETERS params,
                                                 bool tryHwAccel);
 
     bool tryInitializeRenderer(const AVCodec* decoder,
-                               enum AVPixelFormat requiredFormat,
                                PDECODER_PARAMETERS params,
                                const AVCodecHWConfig* hwConfig,
                                std::function<IFFmpegRenderer*()> createRendererFunc);
@@ -72,7 +65,6 @@ private:
 
     AVPacket* m_Pkt;
     AVCodecContext* m_VideoDecoderCtx;
-    enum AVPixelFormat m_RequiredPixelFormat;
     QByteArray m_DecodeBuffer;
     const AVCodecHWConfig* m_HwDecodeCfg;
     IFFmpegRenderer* m_BackendRenderer;
