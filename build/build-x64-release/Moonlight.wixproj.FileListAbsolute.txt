@@ -1,5 +1,0 @@
-C:\Users\xFlow-Laptop\xFlow-moonlight-qt\build\build-x64-release\Moonlight.wixproj.CoreCompileInputs.cache
-C:\Users\xFlow-Laptop\xFlow-moonlight-qt\build\build-x64-release\_MoonlightDependencies_dir.wxs
-C:\Users\xFlow-Laptop\xFlow-moonlight-qt\build\build-x64-release\Moonlight.msi
-C:\Users\xFlow-Laptop\xFlow-moonlight-qt\build\build-x64-release\Moonlight.wixpdb
-C:\Users\xFlow-Laptop\xFlow-moonlight-qt\build\build-x64-release\Moonlight.wixproj.BindTracking-neutral.txt
