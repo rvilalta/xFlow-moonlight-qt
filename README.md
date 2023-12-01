@@ -1,4 +1,4 @@
-# Moonlight Application Build Guide
+# Moonlight Application Build Guide To Integrate With TFS(TerraFlowSDN)
 
 This guide outlines the steps to build the Moonlight application code from source. Ensure you have the necessary software and follow the steps below for a successful build.
 
@@ -15,7 +15,7 @@ This guide outlines the steps to build the Moonlight application code from sourc
 
 3. **Visual Studio (Community Edition):**
    - Download the [Community Edition of Visual Studio](https://visualstudio.microsoft.com/downloads/).
-   - Install Visual Studio with the necessary components for C++ development. 
+   - Install Visual Studio with the necessary components for C++ development.
    - During installation, make sure to select "Desktop development with C++" from the available workloads.
 
 This workload includes the tools and libraries required for C++ development, ensuring you have the necessary components for building the Moonlight application code.
