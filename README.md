@@ -51,9 +51,33 @@ Follow these steps to build the Moonlight application code:
    - Open the cloned folder in Visual Studio.
 
 5. **Select CMake File:**
-   - Visual Studio will automatically detect the CMake file; please choose the file "\xFlow-moonlight-qt\moonlight-common-c\moonlight-common-c\CMakeLists.txt" as the designated CMake file.
+   - Visual Studio will automatically detect the CMake file; please choose the file "**\xFlow-moonlight-qt\moonlight-common-c\moonlight-common-c\CMakeLists.txt**" as the designated CMake file.
 
 6. **Build Moonlight Code:**
+   - Use the following command to build the code.
+
+     ```bash
+     .\scripts\build-arch.bat release
+     ```
+
+## API Configuration
+
+Before using the Moonlight Game Streaming application, follow the steps below to customize the API configuration with your TFS server details:
+
+1. Open the source code file CustomNetworkManager.cpp. The location of this file is **\xFlow-moonlight-qt\app\streaming\CustomNetworkManager.cpp**.
+
+2. Locate the line `const char* hostname = "127.0.0.1:3001";` in each of the functions (`sendPostRequest720p`, `sendPostRequest1080p`, `sendPostRequest1440p`, `sendPatchRequest`).
+
+3. Replace the IP and port with your TFS server details.
+
+    Example:
+    ```cpp
+    // Set the hostname for your TFS server
+    const char* hostname = "your_tfs_server_ip:your_tfs_server_port";
+
+4. Save the changes to `CustomNetworkManager.cpp`.
+
+5. Rebuild the application.
    - Use the following command to build the code.
 
      ```bash
