@@ -1,11 +1,13 @@
-# Moonlight Application Build Guide To Integrate With TFS(TerraFlowSDN)
+# Moonlight Application Build Guide To Integrate With TFS (TerraFlowSDN)
 
-This guide outlines the steps to build the Moonlight application code from source. Ensure you have the necessary software and follow the steps below for a successful build.
+This repository includes a modified Moonlight Game Streaming application with the ETSI GS MEC015 Bandwidth Management API (focusing POST and PATCH methods). This will allow the Moonlight app to send bandwidth requests to [TerraFlowSDN Controller](https://tfs.etsi.org/) (TFS) for an improved gaming experience. The README provides a guide on integrating the Moonlight application with TerraFlowSDN.
+
+The guide below outlines the process of building the Moonlight application code from source and integrating it with the TerraFlowSDN Controller. Make sure you have the required software and follow the steps for a successful build.
 
 ## Windows Build Requirements
 
 1. **Qt Framework:**
-   - Download the [Qt Framework](https://www.qt.io/download-qt-installer-oss ).
+   - Download the [Qt Framework](https://www.qt.io/download-qt-installer-oss).
    - During installation, make sure to select the Qt version 5.15 SDK.
    - Select MSVC option during Qt installation. MinGW is not supported.
    - Follow the installation instructions.
