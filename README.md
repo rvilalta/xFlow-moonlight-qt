@@ -1,6 +1,6 @@
-# Moonlight Application Build Guide To Integrate With TFS (TerraFlowSDN)
+# Moonlight Application Build Guide To Integrate With TFS (TeraFlowSDN)
 
-This repository includes a modified Moonlight Game Streaming application with the ETSI GS MEC015 Bandwidth Management API (focusing POST and PATCH methods). This will allow the Moonlight app to send bandwidth requests to [TerraFlowSDN Controller](https://tfs.etsi.org/) (TFS) for an improved gaming experience. The README provides a guide on integrating the Moonlight application with TerraFlowSDN.
+This repository includes a modified Moonlight Game Streaming application with the ETSI GS MEC015 Bandwidth Management API (focusing POST and PATCH methods). This will allow the Moonlight app to send bandwidth requests to [TeraFlowSDN Controller](https://tfs.etsi.org/) (TFS) for an improved gaming experience. The README provides a guide on integrating the Moonlight application with TerraFlowSDN.
 
 The guide below outlines the process of building the Moonlight application code from source and integrating it with the TerraFlowSDN Controller. Make sure you have the required software and follow the steps for a successful build.
 
